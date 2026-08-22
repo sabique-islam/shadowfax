@@ -47,6 +47,7 @@ function scan(text, rules) {
   pushAll(rules.phrases, 'phrase');
   pushAll(rules.structure, 'structure');
   pushAll(rules.chatbot, 'chatbot');
+  pushAll(rules.authenticity || [], 'authenticity');
 
   if (/[\u2014\u2013]/.test(hay) || / -- /.test(hay)) {
     findings.push({ id: 'punct.emdash', category: 'punct', line: 1, match: 'em/en dash' });

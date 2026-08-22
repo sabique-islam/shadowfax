@@ -41,3 +41,21 @@ Before:
 After:
 
 > Show HN: a streaming CSV parser. We built it because our own import hung at 50k rows. Happy to answer how it fails.
+
+## Authenticity
+
+Before (invented life + slogan):
+
+> I've been in the trenches for years, and I'm thrilled to share that this changes everything. People don't realize how broken imports are.
+
+After (source only: hang at 50k, they built a parser):
+
+> Our import hung at 50k rows. We wrote a streaming parser for that file shape. If yours dies at a different count, say so — I don't want to overclaim.
+
+Before (flattened into a different writer):
+
+> Ship. Measure. Kill.
+
+After (keep their hedging):
+
+> We think this works on files like ours. We have not run it on yours. If you send one failing CSV, we'll say yes or no.
