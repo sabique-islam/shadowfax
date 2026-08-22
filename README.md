@@ -2,6 +2,12 @@
   <img src="./static/banner.png" alt="Shadowfax Banner" width="100%" />
 </div>
 
+<div align="center">
+
+[![skills.sh](https://skills.sh/b/sabique-islam/shadowfax)](https://skills.sh/sabique-islam/shadowfax)
+
+</div>
+
 ---
 
 Shadowfax is a founder-side GTM plugin. It finds where demand already talks, picks one bet, and drafts the reach. You send and post.
