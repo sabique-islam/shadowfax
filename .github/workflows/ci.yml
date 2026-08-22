@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate
+        run: npm run validate
+
+      - name: Test
+        run: npm test
+
+      - name: Cursor skill copy in sync
+        run: |
+          npm run sync-cursor-skills
+          git diff --exit-code -- .cursor/skills \
+            || { echo "::error::.cursor/skills is out of sync with skills/. Run: npm run sync-cursor-skills"; exit 1; }
