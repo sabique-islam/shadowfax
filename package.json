@@ -1,0 +1,48 @@
+{
+  "name": "shadowfax",
+  "version": "0.2.0",
+  "description": "Founder-side GTM pack: find where demand already talks, pick one bet, draft the reach. Research and drafts only.",
+  "license": "MIT",
+  "bin": {
+    "shadowfax": "scripts/install-cursor.js"
+  },
+  "scripts": {
+    "test": "node scripts/run-tests.js",
+    "validate": "node scripts/validate-plugin.js",
+    "install-cursor": "node scripts/install-cursor.js",
+    "sync-cursor-skills": "node scripts/sync-cursor-skills.js"
+  },
+  "files": [
+    "skills",
+    ".cursor",
+    ".cursor-plugin",
+    ".claude-plugin",
+    "scripts",
+    "rules",
+    "static",
+    "plugin.json",
+    "AGENTS.md",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabique-islam/shadowfax.git"
+  },
+  "homepage": "https://github.com/sabique-islam/shadowfax",
+  "bugs": {
+    "url": "https://github.com/sabique-islam/shadowfax/issues"
+  },
+  "keywords": [
+    "gtm",
+    "distribution",
+    "outreach",
+    "positioning",
+    "anti-slop",
+    "founder",
+    "agent-skills"
+  ]
+}
