@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "shadowfax",
+  "owner": {
+    "name": "Sabique Islam"
+  },
+  "description": "Install Shadowfax as a Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "shadowfax",
+      "source": "./",
+      "description": "Founder-side GTM pack: find where demand already talks, pick one bet, draft the reach.",
+      "license": "MIT",
+      "keywords": [
+        "gtm",
+        "distribution",
+        "outreach",
+        "positioning",
+        "anti-slop"
+      ]
+    }
+  ]
+}
