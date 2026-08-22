@@ -196,8 +196,22 @@ function main() {
     else ok('Claude marketplace.json');
   }
 
-  for (const f of ['README.md', 'LICENSE', 'AGENTS.md']) {
-    if (!existsRel(f)) fail(f + ' missing (gold refs ship these)');
+  for (const f of [
+    'README.md',
+    'LICENSE',
+    'AGENTS.md',
+    '.github/CONTRIBUTING.md',
+    '.github/CODE_OF_CONDUCT.md',
+    '.github/SECURITY.md',
+    '.github/dependabot.yml',
+    '.github/PULL_REQUEST_TEMPLATE.md',
+    '.github/ISSUE_TEMPLATE/config.yml',
+    '.github/ISSUE_TEMPLATE/bug.yml',
+    '.github/ISSUE_TEMPLATE/skill.yml',
+    '.github/ISSUE_TEMPLATE/feature.yml',
+    '.github/workflows/ci.yml',
+  ]) {
+    if (!existsRel(f)) fail(f + ' missing (community health)');
     else ok(f);
   }
 
