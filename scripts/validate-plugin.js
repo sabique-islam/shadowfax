@@ -98,6 +98,16 @@ const NAME_RE = /^[a-z0-9]([a-z0-9.-]*[a-z0-9])?$/;
 function main() {
   console.log('Shadowfax plugin check (Cursor + Claude, vs refs/anti-slop gates)\n');
 
+  const pkg = loadJSON('package.json');
+  if (pkg) {
+    ok('package.json');
+    if (pkg.name !== 'shadowfax') fail('package.json name must be shadowfax');
+    if (!pkg.engines || !pkg.engines.node) warn('package.json missing engines.node');
+    if (Array.isArray(pkg.files) && pkg.files.includes('CHANGELOG.md')) {
+      fail('package.json files lists CHANGELOG.md (this pack does not ship one)');
+    }
+  }
+
   const agentPlugin = loadJSON('plugin.json');
   if (agentPlugin) {
     if (agentPlugin.$schema !== 'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json') {
@@ -186,7 +196,7 @@ function main() {
     else ok('Claude marketplace.json');
   }
 
-  for (const f of ['README.md', 'LICENSE', 'AGENTS.md', 'CHANGELOG.md']) {
+  for (const f of ['README.md', 'LICENSE', 'AGENTS.md']) {
     if (!existsRel(f)) fail(f + ' missing (gold refs ship these)');
     else ok(f);
   }
