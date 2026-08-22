@@ -69,6 +69,30 @@ function existsRel(p) {
   return fs.existsSync(path.join(ROOT, p));
 }
 
+function isLink(abs) {
+  try {
+    return fs.lstatSync(abs).isSymbolicLink();
+  } catch (_) {
+    return false;
+  }
+}
+
+function listRelFiles(dir) {
+  const out = [];
+  (function walk(rel) {
+    const abs = rel ? path.join(dir, rel) : dir;
+    for (const name of fs.readdirSync(abs).sort()) {
+      if (name === '.DS_Store') continue;
+      const r = rel ? rel + '/' + name : name;
+      const p = path.join(dir, r);
+      const st = fs.lstatSync(p);
+      if (st.isDirectory()) walk(r);
+      else out.push(r);
+    }
+  })('');
+  return out;
+}
+
 const NAME_RE = /^[a-z0-9]([a-z0-9.-]*[a-z0-9])?$/;
 
 function main() {
@@ -119,8 +143,10 @@ function main() {
     else ok('Cursor skills path ' + skillsRel);
     if (cursorPlugin.rules && !existsRel(rulesRel)) fail('Cursor rules path missing: ' + rulesRel);
     else if (cursorPlugin.rules) ok('Cursor rules path ' + rulesRel);
-    if (!existsRel('skills')) fail('skills/ missing (Claude + scripts)');
-    else ok('skills/ exists');
+    const skillsAbs = path.join(ROOT, 'skills');
+    if (!existsRel('skills')) fail('skills/ missing (npx skills add, Claude, Agent Plugins)');
+    else if (isLink(skillsAbs)) fail('skills/ is a symlink; npx skills add and GitHub zips need a real skills/ folder');
+    else ok('skills/ is a real directory');
     if (cursorPlugin.logo && !existsRel(cursorPlugin.logo)) fail('logo missing: ' + cursorPlugin.logo);
     else if (cursorPlugin.logo) ok('logo ' + cursorPlugin.logo);
   }
@@ -165,69 +191,91 @@ function main() {
     else ok(f);
   }
 
+  const skillsDir = path.join(ROOT, 'skills');
   const cursorSkillsDir = path.join(ROOT, '.cursor', 'skills');
   if (!fs.existsSync(cursorSkillsDir)) fail('.cursor/skills missing (Cursor slash discovery)');
-  else if (fs.lstatSync(cursorSkillsDir).isSymbolicLink()) {
+  else if (isLink(cursorSkillsDir)) {
     fail('.cursor/skills is a symlink; Cursor often skips those. Use a real directory.');
   } else ok('.cursor/skills is a real directory');
 
+  if (fs.existsSync(skillsDir) && fs.existsSync(cursorSkillsDir) && !isLink(skillsDir) && !isLink(cursorSkillsDir)) {
+    const a = listRelFiles(skillsDir);
+    const b = listRelFiles(cursorSkillsDir);
+    if (a.join('\n') !== b.join('\n')) {
+      fail('skills/ and .cursor/skills/ file lists differ. Run: npm run sync-cursor-skills');
+    } else {
+      let drift = 0;
+      for (const rel of a) {
+        const left = fs.readFileSync(path.join(skillsDir, rel));
+        const right = fs.readFileSync(path.join(cursorSkillsDir, rel));
+        if (!left.equals(right)) drift++;
+      }
+      if (drift) fail('skills/ and .cursor/skills/ contents differ (' + drift + ' files). Run: npm run sync-cursor-skills');
+      else ok('skills/ matches .cursor/skills/');
+    }
+  }
+
   const AUTO_INVOKE = new Set(['shadowfax', 'write']);
   const SKILL_NAME_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-  const dirs = fs.readdirSync(cursorSkillsDir).filter((d) => {
-    const p = path.join(cursorSkillsDir, d);
+  const dirs = fs.readdirSync(skillsDir).filter((d) => {
+    const p = path.join(skillsDir, d);
     return fs.statSync(p).isDirectory();
   });
   let skillCount = 0;
   for (const d of dirs) {
-    const skillDir = path.join(cursorSkillsDir, d);
-    if (fs.lstatSync(skillDir).isSymbolicLink()) {
+    const skillDir = path.join(skillsDir, d);
+    if (isLink(skillDir)) {
+      fail('skills/' + d + ' is a symlink; npx skills add will not pack it');
+    }
+    const cursorSkillDir = path.join(cursorSkillsDir, d);
+    if (fs.existsSync(cursorSkillDir) && isLink(cursorSkillDir)) {
       fail('.cursor/skills/' + d + ' is a symlink; Cursor often will not list it under /');
     }
     const skillFile = path.join(skillDir, 'SKILL.md');
     if (!fs.existsSync(skillFile)) {
-      fail('.cursor/skills/' + d + ' has no SKILL.md');
+      fail('skills/' + d + ' has no SKILL.md');
       continue;
     }
     const raw = fs.readFileSync(skillFile, 'utf8');
     const fm = parseFrontmatter(raw);
     if (!fm) {
-      fail('.cursor/skills/' + d + '/SKILL.md missing YAML frontmatter');
+      fail('skills/' + d + '/SKILL.md missing YAML frontmatter');
       continue;
     }
-    if (!fm.name) fail('.cursor/skills/' + d + ' missing name');
+    if (!fm.name) fail('skills/' + d + ' missing name');
     else if (!SKILL_NAME_RE.test(fm.name) || fm.name.length > 64) {
-      fail('.cursor/skills/' + d + ' name fails agentskills.io (lowercase, hyphens, 1-64, no --)');
+      fail('skills/' + d + ' name fails agentskills.io (lowercase, hyphens, 1-64, no --)');
     }
-    if (!fm.description) fail('.cursor/skills/' + d + ' missing description');
+    if (!fm.description) fail('skills/' + d + ' missing description');
     else {
       const desc = fm.description;
-      if (desc.length < 1 || desc.length > 1024) fail('.cursor/skills/' + d + ' description length ' + desc.length + ' (1-1024)');
-      if (!/\bUse (when|for|after)\b/i.test(desc)) fail('.cursor/skills/' + d + ' description needs WHEN (Use when / Use for / Use after)');
-      if (/^(I |You |I'll |We )/i.test(desc)) fail('.cursor/skills/' + d + ' description should be third person');
+      if (desc.length < 1 || desc.length > 1024) fail('skills/' + d + ' description length ' + desc.length + ' (1-1024)');
+      if (!/\bUse (when|for|after)\b/i.test(desc)) fail('skills/' + d + ' description needs WHEN (Use when / Use for / Use after)');
+      if (/^(I |You |I'll |We )/i.test(desc)) fail('skills/' + d + ' description should be third person');
     }
-    if (fm.name && fm.name !== d) fail('.cursor/skills/' + d + ' name=' + fm.name + ' (folder mismatch)');
-    if (fm.license && fm.license !== 'MIT') warn('.cursor/skills/' + d + ' license=' + fm.license + ' (pack is MIT)');
-    if (!fm.license) fail('.cursor/skills/' + d + ' missing license (agentskills.io optional; this pack requires MIT)');
-    if (fm.compatibility && fm.compatibility.length > 500) fail('.cursor/skills/' + d + ' compatibility over 500 chars');
+    if (fm.name && fm.name !== d) fail('skills/' + d + ' name=' + fm.name + ' (folder mismatch)');
+    if (fm.license && fm.license !== 'MIT') warn('skills/' + d + ' license=' + fm.license + ' (pack is MIT)');
+    if (!fm.license) fail('skills/' + d + ' missing license (agentskills.io optional; this pack requires MIT)');
+    if (fm.compatibility && fm.compatibility.length > 500) fail('skills/' + d + ' compatibility over 500 chars');
     const dm = String(fm['disable-model-invocation'] || '').toLowerCase();
     if (AUTO_INVOKE.has(d)) {
       if (dm === 'true' || dm === 'yes' || dm === '1') {
-        fail('.cursor/skills/' + d + ' is the router/write gate and must stay model-invoked');
+        fail('skills/' + d + ' is the router/write gate and must stay model-invoked');
       }
     } else if (dm !== 'true') {
-      fail('.cursor/skills/' + d + ' specialists must set disable-model-invocation: true');
+      fail('skills/' + d + ' specialists must set disable-model-invocation: true');
     }
     const lines = raw.split('\n').length;
-    if (lines > 500) warn('.cursor/skills/' + d + ' SKILL.md is ' + lines + ' lines (create-skill cap 500)');
-    if (!/^## Done$/m.test(raw)) fail('.cursor/skills/' + d + ' missing ## Done (completion criterion)');
+    if (lines > 500) warn('skills/' + d + ' SKILL.md is ' + lines + ' lines (create-skill cap 500)');
+    if (!/^## Done$/m.test(raw)) fail('skills/' + d + ' missing ## Done (completion criterion)');
     const mdLinks = [...raw.matchAll(/\]\(([^)]+)\)/g)].map((m) => m[1]);
     for (const href of mdLinks) {
       if (href.startsWith('http')) continue;
       if (href.split('/').includes('..')) {
-        fail('.cursor/skills/' + d + ' link is not one-level-deep: ' + href);
+        fail('skills/' + d + ' link is not one-level-deep: ' + href);
       } else if (!href.startsWith('#')) {
         const target = path.join(skillDir, href);
-        if (!fs.existsSync(target)) fail('.cursor/skills/' + d + ' broken link ' + href);
+        if (!fs.existsSync(target)) fail('skills/' + d + ' broken link ' + href);
       }
     }
     const scriptMentions = [...raw.matchAll(/\b(skills\/[a-z0-9-]+\/scripts\/[A-Za-z0-9._-]+|scripts\/[A-Za-z0-9._-]+)/g)].map(
@@ -236,7 +284,7 @@ function main() {
     for (const rel of new Set(scriptMentions)) {
       if (existsRel(rel)) continue;
       if (fs.existsSync(path.join(skillDir, rel))) continue;
-      fail('.cursor/skills/' + d + ' mentions missing ' + rel);
+      fail('skills/' + d + ' mentions missing ' + rel);
     }
     skillCount++;
   }
@@ -260,6 +308,7 @@ function main() {
     'scripts/run-state-check.js',
     'scripts/run-state-lib.js',
     'scripts/install-cursor.js',
+    'scripts/sync-cursor-skills.js',
     'scripts/evidence-log.sh',
     'scripts/run-tests.js',
     'plugin.json',

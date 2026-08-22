@@ -6,7 +6,7 @@ const os = require('os');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const SKILLS_SRC = path.join(ROOT, '.cursor', 'skills');
+const SKILLS_SRC = path.join(ROOT, 'skills');
 const USER_SKILLS = path.join(os.homedir(), '.cursor', 'skills');
 const USER_AGENTS = path.join(os.homedir(), '.agents', 'skills');
 const PLUGIN_LOCAL = path.join(os.homedir(), '.cursor', 'plugins', 'local', 'shadowfax');
@@ -17,7 +17,11 @@ function copyDir(src, dest) {
 
 function main() {
   if (!fs.existsSync(path.join(SKILLS_SRC, 'shadowfax', 'SKILL.md'))) {
-    console.error('missing .cursor/skills/shadowfax/SKILL.md');
+    console.error('missing skills/shadowfax/SKILL.md');
+    process.exit(1);
+  }
+  if (fs.lstatSync(SKILLS_SRC).isSymbolicLink()) {
+    console.error('skills/ is a symlink; npx skills add needs a real folder');
     process.exit(1);
   }
 
@@ -45,7 +49,7 @@ function main() {
   fs.symlinkSync(ROOT, PLUGIN_LOCAL);
 
   console.log('Cursor discovery:');
-  console.log('  project skills  ' + SKILLS_SRC);
+  console.log('  repo skills     ' + SKILLS_SRC);
   console.log('  user skills     ' + USER_SKILLS + ' (' + names.length + ' copied)');
   console.log('  local plugin    ' + PLUGIN_LOCAL);
   console.log('');
