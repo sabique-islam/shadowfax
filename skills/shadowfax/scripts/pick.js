@@ -34,6 +34,12 @@ function intentFromMessage(message) {
   if (/\b(article|changelog essay|show hn writeup|long-form)\b/i.test(m)) return 'content';
   if (/\b(tweet|linkedin post|reddit title|short post)\b/i.test(m)) return 'posts';
   if (/\b(discovery call|objection|follow-up email|demo outline|close language)\b/i.test(m)) return 'sales';
+  if (/\b(named (people|companies)|outreach list|prospect list|who should we (email|message))\b/i.test(m)) {
+    return 'prospecting';
+  }
+  if (/\b(distribution experiment|gtm test|one experiment with a kill|hypothesis, sample)\b/i.test(m)) {
+    return 'experiment';
+  }
   if (/\b(cold email|outreach|discord intro)\b/i.test(m)) return 'outreach';
   return 'gtm';
 }
@@ -60,6 +66,14 @@ function pick(stateFlags, message) {
     if (!stateFlags.icp) return { skill: 'icp', intent };
     if (!stateFlags.positioning) return { skill: 'positioning', intent };
     return { skill: 'sales', intent };
+  }
+  if (intent === 'prospecting') {
+    if (!stateFlags.icp) return { skill: 'icp', intent };
+    return { skill: 'prospecting', intent };
+  }
+  if (intent === 'experiment') {
+    if (!stateFlags.channel) return { skill: 'distribution', intent };
+    return { skill: 'experimentation', intent };
   }
   if (intent === 'outreach') {
     if (!stateFlags.reachList || !stateFlags.positioning) {

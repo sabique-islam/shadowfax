@@ -56,6 +56,11 @@ const cases = [
   { flags: full({ positioning: false }), message: 'objection on the discovery call', skill: 'positioning' },
   { flags: full(), message: 'objection on the discovery call', skill: 'sales' },
   { flags: { ...empty, productTruth: true }, message: 'pull G2 quotes, I hate X because', skill: 'find-complaints' },
+  { flags: { ...empty, productTruth: true }, message: 'write a changelog essay from the last PR', skill: 'content' },
+  { flags: full({ icp: false }), message: 'build an outreach list of named people', skill: 'icp' },
+  { flags: full(), message: 'build an outreach list of named people', skill: 'prospecting' },
+  { flags: full({ channel: false }), message: 'define one experiment with a kill', skill: 'distribution' },
+  { flags: full(), message: 'define one experiment with a kill', skill: 'experimentation' },
 ];
 
 for (const c of cases) {
