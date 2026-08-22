@@ -1,0 +1,41 @@
+name: Skill
+description: A specialist is wrong, the router picked the wrong skill, or write flagged a false positive
+title: "[skill] "
+labels: ["skill"]
+body:
+  - type: markdown
+    attributes:
+      value: Name the skill. Quote the founder message or the draft. Do not ask the pack to send or post.
+  - type: input
+    id: skill
+    attributes:
+      label: Skill
+      placeholder: outreach, write, shadowfax, …
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - wrong router pick
+        - missing Process / Done / Refuse
+        - write false positive (voice treated as slop)
+        - write miss (fake authenticity or slop survived)
+        - script failed or missing
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: Input
+      description: Founder message, draft, or lint JSON.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true

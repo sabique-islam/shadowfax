@@ -1,0 +1,30 @@
+name: Feature
+description: A new skill, a tighter gate, or an install path
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: One bet. Shadowfax does not write product code and does not post.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      placeholder: Who has this, and what they do now.
+    validations:
+      required: true
+  - type: textarea
+    id: ask
+    attributes:
+      label: What you want
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Still in scope
+      options:
+        - label: Draft and research only (the founder still sends and posts)
+          required: true
+        - label: Not a request to vendor refs/anti-slop into skills/
+          required: true

@@ -1,0 +1,43 @@
+name: Bug
+description: Install, router, lint, script, or docs is wrong
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Search existing issues first. Do not paste secrets or customer PII.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - install
+        - router
+        - write
+        - skill
+        - scripts
+        - ci
+        - docs
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      placeholder: Expected X. Got Y.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      placeholder: Commands, skill name, founder message, Node version.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Node 20, Cursor / Claude Code / npx skills add"
+    validations:
+      required: true
