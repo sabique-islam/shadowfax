@@ -8,14 +8,18 @@ license: MIT
 
 Read the working project's `.shadowfax/run-state.md` and this plugin's `AGENTS.md`. Execute the picker. Do not reimplement the tree.
 
+## Process
+
+1. Run:
+
 ```bash
 node scripts/run-state-check.js shadowfax
 node skills/shadowfax/scripts/pick.js --message '<founder message>'
 ```
 
-The JSON `skill` field is the specialist. If it is `ask`, ask three product-truth questions and stop. Otherwise open that `SKILL.md` only. Run `node scripts/run-state-check.js <skill>` before the specialist works. If that check fails, open the skill that fills the empty field, or ask the founder.
-
-Do not run a second specialist unless the founder named it.
+2. The JSON `skill` field is the specialist. If it is `ask`, ask three product-truth questions and stop. Otherwise open that `SKILL.md` only.
+3. Run `node scripts/run-state-check.js <skill>` before the specialist works. If that check fails, open the skill that fills the empty field, or ask the founder.
+4. Do not run a second specialist unless the founder named it.
 
 If two named intents could apply, trust the script. Finding 15 people who already complained beats writing a post.
 

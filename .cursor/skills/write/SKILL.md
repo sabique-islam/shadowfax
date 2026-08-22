@@ -34,7 +34,7 @@ Rules live in [scripts/rules.json](scripts/rules.json). The score is a signal, n
 8. **Platform.** Emails and DMs stay plain text. Contractions are fine. No "I hope this email finds you well."
 9. **Break a rule** sooner than write something untrue, unclear, or graceless.
 
-## Do not
+## Refuse
 
 - Run a banned-word crusade that flattens a founder who says "robust" on purpose.
 - Inject personality the source does not have.
