@@ -23,9 +23,9 @@
     "plugin.json",
     "AGENTS.md",
     "README.md",
-    "LICENSE",
-    "CHANGELOG.md"
+    "LICENSE"
   ],
+  "engines": {
     "node": ">=18"
   },
   "repository": {
