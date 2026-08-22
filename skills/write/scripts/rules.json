@@ -76,5 +76,18 @@
     { "id": "bot.hope-finds", "re": "i hope this (?:email )?finds you" },
     { "id": "bot.would-you-like", "re": "would you like me to" },
     { "id": "bot.let-me-think", "re": "let me think" }
+  ],
+  "authenticity": [
+    { "id": "auth.trenches", "re": "in the trenches" },
+    { "id": "auth.over-the-years", "re": "over the years,? I(?:'| ha)?ve" },
+    { "id": "auth.passionate", "re": "as a passionate\\b" },
+    { "id": "auth.always-believed", "re": "I(?:'| ha)?ve always (?:been passionate|believed)" },
+    { "id": "auth.excited-announce", "re": "excited to (?:announce|share)" },
+    { "id": "auth.thrilled", "re": "\\bthrilled to\\b" },
+    { "id": "auth.people-dont-realize", "re": "people don'?t realize" },
+    { "id": "auth.nobody-talks", "re": "nobody talks about" },
+    { "id": "auth.teams-everywhere", "re": "teams everywhere" },
+    { "id": "auth.changes-everything", "re": "this changes everything" },
+    { "id": "auth.next-decade", "re": "(?:define|shape) the next decade" }
   ]
 }

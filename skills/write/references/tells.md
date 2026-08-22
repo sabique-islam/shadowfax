@@ -43,3 +43,14 @@ Emails and DMs: no markdown headers, no bold-label bullets. Social: no hashtag s
 ## Keep (voice, not slop)
 
 Earned short beat after a long sentence. A contrast the author would defend. First-person when they own the claim. Specific ugly detail. Mixed feelings. Contractions.
+
+## Authenticity (sounds like them, not "a human")
+
+Fake lived experience is worse than a leftover "robust":
+- "in the trenches", "over the years I've", "as a passionate X", "I've always believed"
+- "excited to announce / share", "thrilled to"
+- Lecturer distance: "people don't realize", "nobody talks about", "teams everywhere"
+- Slogan closer: "this changes everything", "the next decade of X"
+- Detector tricks: planted typos, random slang, "just a thought lol" glued on
+
+Fix: use the source's actor and the source's detail, or ask. Do not manufacture a life.

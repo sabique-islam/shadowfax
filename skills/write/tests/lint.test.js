@@ -22,4 +22,20 @@ const filler = `In order to ship this, it is important to note that the team is 
 const fillerResult = analyze(filler, rules);
 assert(fillerResult.findings.length >= 2, `filler sample should flag phrases, got ${fillerResult.findings.length}`);
 
-console.log('ok', { ai: aiResult.score, human: humanResult.score, filler: fillerResult.findings.length });
+const fakeLife = `I've been in the trenches for years and I'm thrilled to share that this changes everything. People don't realize how broken imports are.`;
+const fakeResult = analyze(fakeLife, rules);
+assert(
+  fakeResult.findings.some((f) => f.category === 'authenticity'),
+  'fake lived-experience copy should flag authenticity'
+);
+
+const owned = `Our import hung at 50k rows. We wrote a streaming parser for that file shape. If yours dies at a different count, say so.`;
+const ownedResult = analyze(owned, rules);
+assert(ownedResult.findings.length === 0, `sourced first-person should stay clean, got ${JSON.stringify(ownedResult.findings)}`);
+
+console.log('ok', {
+  ai: aiResult.score,
+  human: humanResult.score,
+  filler: fillerResult.findings.length,
+  authenticity: fakeResult.findings.filter((f) => f.category === 'authenticity').length,
+});
