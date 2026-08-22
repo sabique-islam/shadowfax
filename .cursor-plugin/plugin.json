@@ -25,6 +25,6 @@
     "research",
     "sales"
   ],
-  "skills": "./.cursor/skills/",
+  "skills": "./skills/",
   "rules": "./.cursor/rules/"
 }
