@@ -1,0 +1,30 @@
+{
+  "name": "shadowfax",
+  "displayName": "Shadowfax",
+  "version": "0.2.0",
+  "description": "Founder-side GTM pack: find where demand already talks, pick one bet, draft the reach. Research and drafts only.",
+  "author": {
+    "name": "Sabique Islam"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/sabique-islam/shadowfax",
+  "repository": "https://github.com/sabique-islam/shadowfax",
+  "logo": "static/banner.png",
+  "keywords": [
+    "gtm",
+    "distribution",
+    "outreach",
+    "positioning",
+    "anti-slop",
+    "founder"
+  ],
+  "category": "productivity",
+  "tags": [
+    "gtm",
+    "writing",
+    "research",
+    "sales"
+  ],
+  "skills": "./.cursor/skills/",
+  "rules": "./.cursor/rules/"
+}

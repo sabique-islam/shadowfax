@@ -1,0 +1,16 @@
+{
+  "name": "shadowfax",
+  "owner": {
+    "name": "Sabique Islam"
+  },
+  "metadata": {
+    "description": "Shadowfax founder-side GTM plugin marketplace"
+  },
+  "plugins": [
+    {
+      "name": "shadowfax",
+      "source": "./",
+      "description": "Founder-side GTM pack: find where demand already talks, pick one bet, draft the reach."
+    }
+  ]
+}
