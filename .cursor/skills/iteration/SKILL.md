@@ -1,6 +1,6 @@
 ---
 name: iteration
-description: Writes learnings back into the living bet: positioning, channel, ICP, or kill. Use after evidence, analytics, or a campaign review when the next cycle should change. Allowed to kill positioning.
+description: "Writes learnings back into the living bet: positioning, channel, ICP, or kill. Use after evidence, analytics, or a campaign review when the next cycle should change. Allowed to kill positioning."
 license: MIT
 disable-model-invocation: true
 ---

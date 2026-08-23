@@ -1,6 +1,6 @@
 ---
 name: campaign-review
-description: Reviews a specific campaign: what was sent, what happened, and whether the failure was message, audience, channel, or product. Use after a launch, outreach batch, or ad. Allowed to say it failed.
+description: "Reviews a specific campaign: what was sent, what happened, and whether the failure was message, audience, channel, or product. Use after a launch, outreach batch, or ad. Allowed to say it failed."
 license: MIT
 disable-model-invocation: true
 ---
