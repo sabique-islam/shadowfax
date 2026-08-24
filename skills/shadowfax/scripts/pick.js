@@ -27,11 +27,21 @@ function intentFromMessage(message) {
   if (/\b(show hn|product hunt|changelog launch|we are launching|launch week)\b/i.test(m)) return 'launch';
   if (/\b(what happened|the campaign failed|open rate|nobody replied|results from)\b/i.test(m)) return 'results';
   if (/\b(change the bet|kill positioning|next cycle|iterate the)\b/i.test(m)) return 'iteration';
+  if (/\b(aeo|ai overviews?|answer engine|cited by (an )?ai|ai citations?)\b/i.test(m)) return 'aeo';
+  if (
+    /\b(blog audit|audit (the |our |existing )?blog|empty SEO|search console|\bGSC\b|content audit|SEO performance|rank(ing)? existing posts|surgical (SEO )?edits?)\b/i.test(
+      m
+    )
+  ) {
+    return 'content-audit';
+  }
   if (/\b(signed up but|activation|retention|funnel|posthog)\b/i.test(m)) return 'analytics';
   if (/\b(g2|trustpilot|app store review|i hate .+ because)\b/i.test(m)) return 'complaints';
   if (/\b(reel|short-form|what to film|tiktok hook)\b/i.test(m)) return 'video';
   if (/\b(meme|joke format|trend to riff|fun post)\b/i.test(m)) return 'trends';
-  if (/\b(article|changelog essay|show hn writeup|long-form)\b/i.test(m)) return 'content';
+  if (/\b(article|changelog essay|show hn writeup|long-form|draft a blog|write a blog|blog post|near-miss quer)\b/i.test(m)) {
+    return 'content';
+  }
   if (/\b(tweet|linkedin post|reddit title|short post)\b/i.test(m)) return 'posts';
   if (/\b(discovery call|objection|follow-up email|demo outline|close language)\b/i.test(m)) return 'sales';
   if (/\b(named (people|companies)|outreach list|prospect list|who should we (email|message))\b/i.test(m)) {
@@ -57,6 +67,8 @@ function pick(stateFlags, message) {
     return { skill: stateFlags.lastObservation ? 'iteration' : 'campaign-review', intent };
   }
   if (intent === 'analytics') return { skill: 'analytics', intent };
+  if (intent === 'aeo') return { skill: 'aeo', intent };
+  if (intent === 'content-audit') return { skill: 'content-audit', intent };
   if (intent === 'complaints') return { skill: 'find-complaints', intent };
   if (intent === 'video') return { skill: 'video-ideas', intent };
   if (intent === 'trends') return { skill: 'trends', intent };
