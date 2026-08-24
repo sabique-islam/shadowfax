@@ -4,7 +4,7 @@
 const fs = require('fs');
 const https = require('https');
 
-const UA = 'shadowfax/0.2.0 (https://github.com/sabique-islam/shadowfax)';
+const UA = 'shadowfax/0.3.0 (https://github.com/sabique-islam/shadowfax)';
 
 function get(url) {
   return new Promise((resolve, reject) => {
