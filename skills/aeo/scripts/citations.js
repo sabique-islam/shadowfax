@@ -72,17 +72,19 @@ function parseCsv(text) {
 function slugFrom(value) {
   const raw = String(value || '').trim();
   if (!raw) return '';
+  let last;
   if (!/^https?:\/\//i.test(raw)) {
-    return raw.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean).pop() || raw;
+    last = raw.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean).pop() || raw;
+  } else {
+    try {
+      const u = new URL(raw);
+      const parts = u.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
+      last = parts[parts.length - 1] || u.hostname;
+    } catch (e) {
+      last = raw;
+    }
   }
-  try {
-    const u = new URL(raw);
-    const parts = u.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
-    const last = parts[parts.length - 1] || u.hostname;
-    return last.replace(/\.(html?|md)$/i, '');
-  } catch (e) {
-    return raw;
-  }
+  return String(last).replace(/\.(html?|md)$/i, '');
 }
 
 function headerIndex(headers, names) {
