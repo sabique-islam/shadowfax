@@ -17,10 +17,10 @@ Execute them. Do not reimplement them in prose. `run-state-check` and `evidence-
 From the plugin root:
 
 - Router first: `node skills/shadowfax/scripts/pick.js --message '<founder message>'` then `node scripts/run-state-check.js <skill>`
-- `prospecting` and `experimentation` are pickable (named people / one experiment with a kill), not slash-only
+- `prospecting`, `experimentation`, `content-audit`, and `aeo` are pickable (named people / one experiment with a kill / blog opportunity / answer-engine citations), not slash-only
 - Find skills, after each quote: `bash scripts/evidence-log.sh <source> <quote> <url>`
 - Outbound drafts: `node skills/write/scripts/lint.js analyze <file-or-stdin>` then apply `skills/write`
-- Skill-owned CLIs live next to that skill (`youtube`, `github`, `outreach`, `experimentation`, `analytics`, `trends`, `video-ideas`). The SKILL.md names the command.
+- Skill-owned CLIs live next to that skill (`youtube`, `github`, `outreach`, `experimentation`, `analytics`, `trends`, `video-ideas`, `content`, `content-audit`, `aeo`). The SKILL.md names the command.
 
 ## How you talk
 
@@ -83,7 +83,8 @@ Open the matching `skills/<name>/SKILL.md`. Bodies stay in those files.
 **Draft**
 
 - `outreach` — one specific message per prospect
-- `content` — long-form from product, PRs, users
+- `content` — long-form from product, PRs, users; generator gates on new SEO posts
+- `content-audit` — rank existing posts by search opportunity, draft surgical edits
 - `posts` — short social for the chosen network
 - `video-ideas` — reel and short ideas
 - `trends` — live niche jokes and fun-post research
@@ -93,5 +94,6 @@ Open the matching `skills/<name>/SKILL.md`. Bodies stay in those files.
 **Learn**
 
 - `analytics` — acquisition, activation, retention
+- `aeo` — crawl / cite / click for answer engines
 - `campaign-review` — why this campaign failed or worked
 - `iteration` — write the next bet into run-state

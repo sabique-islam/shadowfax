@@ -22,7 +22,7 @@ One command. Works in Cursor, Claude Code, Codex, and 70+ agents ([skills CLI](h
 npx skills add sabique-islam/shadowfax
 ```
 
-All 24 skills, no prompts, copy files (Cursor skips skill-folder symlinks):
+All 26 skills, no prompts, copy files (Cursor skips skill-folder symlinks):
 
 ```bash
 npx skills add sabique-islam/shadowfax --all --copy -y
@@ -95,13 +95,15 @@ That copies skills into `~/.cursor/skills/` and points `~/.cursor/plugins/local/
 | `/distribution` | One path this cycle |
 | `/experimentation` | One experiment with a kill |
 | `/outreach` | One specific message per prospect |
-| `/content` | Long-form from product, PRs, users |
+| `/content` | Long-form from product, PRs, users; gated new SEO posts |
+| `/content-audit` | Rank existing posts by search opportunity, draft surgical edits |
 | `/posts` | Short social for the chosen network |
 | `/video-ideas` | Reel and short ideas |
 | `/trends` | Live niche jokes and fun-post research |
 | `/launches` | Coordinated drafts for this launch |
 | `/sales` | Discovery, objections, follow-ups |
 | `/analytics` | Acquisition, activation, retention |
+| `/aeo` | Crawl / cite / click for answer engines |
 | `/campaign-review` | Why this campaign failed or worked |
 | `/iteration` | Write the next bet into run-state |
 

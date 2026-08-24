@@ -22,7 +22,7 @@ From repo root: `node scripts/run-state-check.js distribution`. If it fails, sto
 1. List the places the ICP already talks (from run-state only).
 2. Rank by time-to-signal, not prestige.
 3. Pick one. Name the kill (what we will see, by when, that means stop).
-4. Name the skills that may draft next (`outreach`, `posts`, `launches`, …). Do not run them.
+4. Name the skills that may draft next (`outreach`, `content`, `content-audit`, `posts`, `launches`, …). Do not run them.
 
 ## Output
 

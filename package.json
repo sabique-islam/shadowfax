@@ -1,6 +1,6 @@
 {
   "name": "shadowfax",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Founder-side GTM pack: find where demand already talks, pick one bet, draft the reach. Research and drafts only.",
   "license": "MIT",
   "bin": {

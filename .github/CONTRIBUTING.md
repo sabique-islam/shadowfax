@@ -36,7 +36,7 @@ npm test
 npm run validate
 ```
 
-If you change the router, add a fixture in `skills/shadowfax/tests/pick.test.js`. If you change `write` lint rules, add a sample in `skills/write/tests/lint.test.js`.
+If you change the router, add a fixture in `skills/shadowfax/tests/pick.test.js`. If you add a skill CLI, add a test next to it and list the script in `scripts/validate-plugin.js`. If you change `write` lint rules, add a sample in `skills/write/tests/lint.test.js`.
 
 ## Pull requests
 

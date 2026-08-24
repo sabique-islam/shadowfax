@@ -31,7 +31,7 @@ One specialist is named with a reason, that SKILL.md is open, and a second speci
 
 Do not produce an ICP, a tweet pack, a launch checklist, and a sales script in one turn. Say which skill you are not opening.
 
-Do not open `posts` or `content` because those folders exist. Open them when the picker says so.
+Do not open `posts`, `content`, `content-audit`, or `aeo` because those folders exist. Open them when the picker says so.
 
 ## After the specialist
 
