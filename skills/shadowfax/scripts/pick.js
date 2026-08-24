@@ -27,7 +27,9 @@ function intentFromMessage(message) {
   if (/\b(show hn|product hunt|changelog launch|we are launching|launch week)\b/i.test(m)) return 'launch';
   if (/\b(what happened|the campaign failed|open rate|nobody replied|results from)\b/i.test(m)) return 'results';
   if (/\b(change the bet|kill positioning|next cycle|iterate the)\b/i.test(m)) return 'iteration';
-  if (/\b(aeo|ai overviews?|answer engine|cited by (an )?ai|ai citations?)\b/i.test(m)) return 'aeo';
+  if (/\b(aeo|ai overviews?|answer engine|cited by (an )?ai|ai citations?|chatgpt citations?|claude citations?)\b/i.test(m)) {
+    return 'aeo';
+  }
   if (
     /\b(blog audit|audit (the |our |existing )?blog|empty SEO|search console|\bGSC\b|content audit|SEO performance|rank(ing)? existing posts|surgical (SEO )?edits?)\b/i.test(
       m

@@ -59,6 +59,7 @@ const cases = [
   { flags: { ...empty, productTruth: true }, message: 'write a changelog essay from the last PR', skill: 'content' },
   { flags: { ...empty, productTruth: true }, message: 'run the blog audit on empty SEO titles', skill: 'content-audit' },
   { flags: { ...empty, productTruth: true }, message: 'are we getting ChatGPT citations or AEO', skill: 'aeo' },
+  { flags: { ...empty, productTruth: true }, message: 'pull Claude citations from the export', skill: 'aeo' },
   { flags: { ...empty, productTruth: true }, message: 'draft a blog from a near-miss query', skill: 'content' },
   { flags: full({ icp: false }), message: 'build an outreach list of named people', skill: 'icp' },
   { flags: full(), message: 'build an outreach list of named people', skill: 'prospecting' },
