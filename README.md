@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![skills.sh](https://skills.sh/b/glorfindel/shadowfax)](https://skills.sh/glorfindel/shadowfax)
+[![skills.sh](https://skills.sh/b/sabique-islam/shadowfax)](https://skills.sh/sabique-islam/shadowfax)
 
 </div>
 
