@@ -7,7 +7,9 @@ disable-model-invocation: true
 
 # Sales
 
-Discovery, qualification, demo, objections, follow-ups, close. Draft only.
+Discovery, qualification, demo, objections, follow-ups, close. Draft only. Do deals yourself until ~10–20 repeat.
+
+Deal framework: [references/deal.md](references/deal.md). Inbound calls: `inbound`. Buyer gap: `buyer-gap`.
 
 Use **ICP**, **Positioning bet**, and any **Evidence** from real calls the founder pasted.
 

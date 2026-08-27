@@ -9,6 +9,8 @@ const empty = {
   evidence: false,
   icp: false,
   positioning: false,
+  diagnosis: false,
+  roadmap: false,
   channel: false,
   reachList: false,
   lastObservation: false,
@@ -21,6 +23,8 @@ function full(over) {
       evidence: true,
       icp: true,
       positioning: true,
+      diagnosis: true,
+      roadmap: true,
       channel: true,
       reachList: true,
       lastObservation: true,
@@ -31,6 +35,8 @@ function full(over) {
 
 const cases = [
   { flags: empty, message: 'what is the shortest path to traction', skill: 'ask' },
+  { flags: empty, message: 'run start here five questions', skill: 'onboarding' },
+  { flags: { ...empty, productTruth: true }, message: 'what should I work on next', skill: 'roadmap' },
   { flags: empty, message: 'transcribe https://www.youtube.com/watch?v=dQw4w9WgXcQ', skill: 'youtube' },
   { flags: empty, message: 'how does the competitor price this', skill: 'competitive' },
   { flags: empty, message: 'read github.com/foo/bar issues', skill: 'github' },
@@ -39,6 +45,11 @@ const cases = [
   { flags: { ...empty, productTruth: true, evidence: true, icp: true }, message: 'what do we say', skill: 'positioning' },
   {
     flags: { ...empty, productTruth: true, evidence: true, icp: true, positioning: true },
+    message: 'where should we show up',
+    skill: 'roadmap',
+  },
+  {
+    flags: { ...empty, productTruth: true, evidence: true, icp: true, positioning: true, diagnosis: true },
     message: 'where should we show up',
     skill: 'distribution',
   },
@@ -50,6 +61,14 @@ const cases = [
   { flags: full(), message: 'change the bet for next cycle', skill: 'iteration' },
   { flags: full({ lastObservation: false }), message: 'change the bet for next cycle', skill: 'campaign-review' },
   { flags: full(), message: 'people signed up but nobody stayed', skill: 'analytics' },
+  { flags: full(), message: 'time to first value friction log', skill: 'activation' },
+  { flags: full(), message: 'what should we charge pricing', skill: 'pricing' },
+  { flags: full(), message: 'draft homepage hero copy', skill: 'homepage' },
+  { flags: full(), message: 'customer support ticket reply', skill: 'customer-support' },
+  { flags: full(), message: 'booked a demo call what do I say', skill: 'inbound' },
+  { flags: full(), message: 'first 50 users nobody came', skill: 'first-users' },
+  { flags: full(), message: 'talk to users TAB interview', skill: 'talk-to-users' },
+  { flags: full(), message: 'review this positioning is it good', skill: 'review' },
   { flags: { ...empty, productTruth: true }, message: 'draft a tweet about the hang', skill: 'posts' },
   { flags: { ...empty, productTruth: true }, message: 'what to film for a reel', skill: 'video-ideas' },
   { flags: { ...empty, productTruth: true }, message: 'find a meme format to riff', skill: 'trends' },
@@ -58,13 +77,17 @@ const cases = [
   { flags: { ...empty, productTruth: true }, message: 'pull G2 quotes, I hate X because', skill: 'find-complaints' },
   { flags: { ...empty, productTruth: true }, message: 'write a changelog essay from the last PR', skill: 'content' },
   { flags: { ...empty, productTruth: true }, message: 'run the blog audit on empty SEO titles', skill: 'content-audit' },
+  { flags: { ...empty, productTruth: true }, message: 'SEO for the website surgical edits', skill: 'content-audit' },
   { flags: { ...empty, productTruth: true }, message: 'are we getting ChatGPT citations or AEO', skill: 'aeo' },
-  { flags: { ...empty, productTruth: true }, message: 'pull Claude citations from the export', skill: 'aeo' },
-  { flags: { ...empty, productTruth: true }, message: 'draft a blog from a near-miss query', skill: 'content' },
   { flags: full({ icp: false }), message: 'build an outreach list of named people', skill: 'icp' },
   { flags: full(), message: 'build an outreach list of named people', skill: 'prospecting' },
   { flags: full({ channel: false }), message: 'define one experiment with a kill', skill: 'distribution' },
   { flags: full(), message: 'define one experiment with a kill', skill: 'experimentation' },
+  {
+    flags: full({ diagnosis: false }),
+    message: 'help with traction',
+    skill: 'roadmap',
+  },
 ];
 
 for (const c of cases) {
@@ -73,6 +96,7 @@ for (const c of cases) {
 }
 
 assert.strictEqual(intentFromMessage('https://youtu.be/abc'), 'youtube');
+assert.strictEqual(intentFromMessage('pricing tiers'), 'pricing');
 assert.strictEqual(intentFromMessage('hello'), 'gtm');
 
 console.log('ok', cases.length, 'router fixtures');

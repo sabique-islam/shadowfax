@@ -22,7 +22,25 @@ const { flags: flagsFromMd } = require(path.join(PLUGIN_ROOT, 'scripts', 'run-st
 function intentFromMessage(message) {
   const m = String(message || '');
   if (/youtu\.be|youtube\.com/i.test(m)) return 'youtube';
-  if (/\b(competitor|rival|alternative to|how they price)\b/i.test(m)) return 'competitor';
+  if (/\b(onboard|founder brief|start here|setup from scratch|five questions|generic advice)\b/i.test(m)) return 'onboard';
+  if (/\b(roadmap|what (to|should I) work on next|diagnosis|now next later|gtm plan)\b/i.test(m)) return 'roadmap';
+  if (/\b(interview users|talk to users|TAB|customer discovery|user interview)\b/i.test(m)) return 'talk-users';
+  if (/\b(review (this|the)|stress.?test|is this (actually )?good|quality gate)\b/i.test(m)) return 'review';
+  if (/\b(pricing|what to charge|free tier|value metric|how much (should we|to) charge)\b/i.test(m)) return 'pricing';
+  if (/\b(homepage|landing page|hero copy|above the fold)\b/i.test(m)) return 'homepage';
+  if (/\b(value prop|jobs to be done|JTBD|why would they care)\b/i.test(m)) return 'value-prop';
+  if (/\b(time to first value|first run|onboarding leak|activation|weekend test|friction log)\b/i.test(m)) return 'activation';
+  if (/\b(first 50|first users|nobody came|shipped to silence)\b/i.test(m)) return 'first-users';
+  if (/\b(growth loop|viral|referral loop|self.?reinforcing)\b/i.test(m)) return 'growth-loops';
+  if (/\b(buyer|champion|devs love it.*(pay|paid)|market to devs)\b/i.test(m)) return 'buyer-gap';
+  if (/\b(wrapper|just chatgpt|commodity model|ai wrapper)\b/i.test(m)) return 'beyond-wrapper';
+  if (/\b(support ticket|customer (email|reply)|refund|help desk|respond to (this|the) (user|customer))\b/i.test(m)) {
+    return 'support';
+  }
+  if (/\b(on a call|phone call|voicemail|booked a (demo|call)|inbound call|what (to|do I) say on the call)\b/i.test(m)) {
+    return 'inbound';
+  }
+  if (/\b(competitor|rival|alternative to|how they price|market scan)\b/i.test(m)) return 'competitor';
   if (/\b(github\.com\/|issues? and prs|pull requests?)\b/i.test(m)) return 'github';
   if (/\b(show hn|product hunt|changelog launch|we are launching|launch week)\b/i.test(m)) return 'launch';
   if (/\b(what happened|the campaign failed|open rate|nobody replied|results from)\b/i.test(m)) return 'results';
@@ -31,13 +49,13 @@ function intentFromMessage(message) {
     return 'aeo';
   }
   if (
-    /\b(blog audit|audit (the |our |existing )?blog|empty SEO|search console|\bGSC\b|content audit|SEO performance|rank(ing)? existing posts|surgical (SEO )?edits?)\b/i.test(
+    /\b(blog audit|audit (the |our |existing )?blog|empty SEO|search console|\bGSC\b|content audit|SEO performance|rank(ing)? existing posts|surgical (SEO )?edits?|\bSEO\b for (the )?site)\b/i.test(
       m
     )
   ) {
     return 'content-audit';
   }
-  if (/\b(signed up but|activation|retention|funnel|posthog)\b/i.test(m)) return 'analytics';
+  if (/\b(signed up but|retention|funnel|posthog|net developer retention|DREAM funnel)\b/i.test(m)) return 'analytics';
   if (/\b(g2|trustpilot|app store review|i hate .+ because)\b/i.test(m)) return 'complaints';
   if (/\b(reel|short-form|what to film|tiktok hook)\b/i.test(m)) return 'video';
   if (/\b(meme|joke format|trend to riff|fun post)\b/i.test(m)) return 'trends';
@@ -45,23 +63,73 @@ function intentFromMessage(message) {
     return 'content';
   }
   if (/\b(tweet|linkedin post|reddit title|short post)\b/i.test(m)) return 'posts';
-  if (/\b(discovery call|objection|follow-up email|demo outline|close language)\b/i.test(m)) return 'sales';
+  if (/\b(discovery call|objection|follow-up email|demo outline|close language|founder.?led sales)\b/i.test(m)) {
+    return 'sales';
+  }
   if (/\b(named (people|companies)|outreach list|prospect list|who should we (email|message))\b/i.test(m)) {
     return 'prospecting';
   }
   if (/\b(distribution experiment|gtm test|one experiment with a kill|hypothesis, sample)\b/i.test(m)) {
     return 'experiment';
   }
-  if (/\b(cold email|outreach|discord intro)\b/i.test(m)) return 'outreach';
+  if (/\b(cold email|outreach|discord intro|draft (an )?email|follow.?up mail)\b/i.test(m)) return 'outreach';
   return 'gtm';
+}
+
+function gateTactical(stateFlags, skill, intent) {
+  const spine = new Set(['onboarding', 'roadmap', 'market-research', 'talk-to-users', 'review', 'ask']);
+  if (spine.has(skill)) return skill;
+  if (!stateFlags.diagnosis && !spine.has(skill)) return 'roadmap';
+  return skill;
 }
 
 function pick(stateFlags, message) {
   const intent = intentFromMessage(message);
   if (intent === 'youtube') return { skill: 'youtube', intent };
+  if (intent === 'onboard') return { skill: 'onboarding', intent };
+  if (intent === 'roadmap') return { skill: stateFlags.productTruth ? 'roadmap' : 'onboarding', intent };
+  if (intent === 'review') return { skill: 'review', intent };
   if (intent === 'competitor') return { skill: 'competitive', intent };
   if (intent === 'github') return { skill: 'github', intent };
-  if (!stateFlags.productTruth) return { skill: 'ask', intent };
+  if (!stateFlags.productTruth) {
+    if (intent === 'support' || intent === 'inbound') return { skill: 'onboarding', intent };
+    return { skill: 'ask', intent };
+  }
+
+  if (intent === 'talk-users') return { skill: 'talk-to-users', intent };
+  if (intent === 'pricing') {
+    if (!stateFlags.icp) return { skill: 'icp', intent };
+    return { skill: gateTactical(stateFlags, 'pricing', intent), intent };
+  }
+  if (intent === 'homepage') {
+    if (!stateFlags.icp) return { skill: 'icp', intent };
+    if (!stateFlags.positioning) return { skill: 'positioning', intent };
+    return { skill: gateTactical(stateFlags, 'homepage', intent), intent };
+  }
+  if (intent === 'value-prop') {
+    if (!stateFlags.evidence) return { skill: 'market-research', intent };
+    if (!stateFlags.icp) return { skill: 'icp', intent };
+    return { skill: gateTactical(stateFlags, 'value-prop', intent), intent };
+  }
+  if (intent === 'activation') return { skill: gateTactical(stateFlags, 'activation', intent), intent };
+  if (intent === 'first-users') {
+    if (!stateFlags.icp) return { skill: 'icp', intent };
+    return { skill: gateTactical(stateFlags, 'first-users', intent), intent };
+  }
+  if (intent === 'growth-loops') {
+    if (!stateFlags.icp) return { skill: 'icp', intent };
+    return { skill: gateTactical(stateFlags, 'growth-loops', intent), intent };
+  }
+  if (intent === 'buyer-gap') {
+    if (!stateFlags.icp) return { skill: 'icp', intent };
+    return { skill: gateTactical(stateFlags, 'buyer-gap', intent), intent };
+  }
+  if (intent === 'beyond-wrapper') return { skill: gateTactical(stateFlags, 'beyond-wrapper', intent), intent };
+  if (intent === 'support') return { skill: 'customer-support', intent };
+  if (intent === 'inbound') {
+    if (!stateFlags.positioning) return { skill: 'positioning', intent };
+    return { skill: 'inbound', intent };
+  }
 
   if (intent === 'launch') return { skill: stateFlags.channel ? 'launches' : 'distribution', intent };
   if (intent === 'results') return { skill: 'campaign-review', intent };
@@ -103,6 +171,7 @@ function pick(stateFlags, message) {
   if (!stateFlags.evidence) return { skill: 'market-research', intent };
   if (!stateFlags.icp) return { skill: 'icp', intent };
   if (!stateFlags.positioning) return { skill: 'positioning', intent };
+  if (!stateFlags.diagnosis) return { skill: 'roadmap', intent };
   if (!stateFlags.channel) return { skill: 'distribution', intent };
   if (!stateFlags.reachList) return { skill: 'find-communities', intent };
   return { skill: 'outreach', intent };
@@ -136,6 +205,6 @@ function main() {
   console.log(JSON.stringify(result));
 }
 
-module.exports = { intentFromMessage, pick };
+module.exports = { intentFromMessage, pick, gateTactical };
 
 if (require.main === module) main();

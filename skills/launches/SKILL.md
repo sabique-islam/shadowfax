@@ -7,7 +7,9 @@ disable-model-invocation: true
 
 # Launches
 
-Coordinated drafts. The founder still posts.
+Coordinated drafts. The founder still posts. One deep launch beats ten shallow ones.
+
+Launch guide: [references/launch-guide.md](references/launch-guide.md).
 
 **Channel bet** (or an explicit launch channel list from `distribution`) is required. If empty, refuse and open `distribution` via the router, do not invent five channels.
 
@@ -20,7 +22,7 @@ node scripts/run-state-check.js launches
 node skills/write/scripts/lint.js analyze draft.md
 ```
 
-Then apply `skills/write` to every draft.
+Then apply `skills/write` to every draft. Run `review` on the primary launch post before presenting.
 
 ## Do
 

@@ -7,7 +7,9 @@ disable-model-invocation: true
 
 # Analytics
 
-Where it breaks. Acquisition, activation, retention.
+Where it breaks. Acquisition, activation, retention. Net developer retention beats vanity charts.
+
+Metrics framework: [references/metrics.md](references/metrics.md).
 
 You need numbers or event descriptions from the founder. Write **Last observation**.
 

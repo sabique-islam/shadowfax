@@ -7,11 +7,13 @@ disable-model-invocation: true
 
 # Positioning
 
-What to say. What not to say. One lead sentence.
+What to say. What not to say. One lead sentence. Problem before solution. Villain optional but sharp.
 
-You need **Evidence** and preferably **ICP**. If fifteen quotes already name the problem, that language wins over founder-speak.
+Story framework: [references/story.md](references/story.md).
 
-Write **Positioning bet**.
+You need **Evidence** and preferably **ICP**. If fifteen quotes already name the problem, that language wins over founder-speak. Flag `[assumption]` if villain or pain is unvalidated.
+
+Write **Positioning bet**. Run `review` before presenting if this replaces a live lead sentence.
 
 ## Process
 

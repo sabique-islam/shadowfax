@@ -11,6 +11,8 @@ Facts. Dated. Sourced. You do not write our lead sentence. That is `positioning`
 
 Write **Evidence** with competitor lines. You may add an **Attempt log** note if we already copied a dead rival tactic.
 
+Cadence refresh: [references/scan.md](references/scan.md).
+
 ## Process
 
 From repo root: `node scripts/run-state-check.js competitive`. After each quote: `bash scripts/evidence-log.sh <source> '<quote>' '<url>'`.
