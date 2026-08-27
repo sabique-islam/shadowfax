@@ -23,13 +23,13 @@ In Cursor, also:
 node scripts/install-cursor.js
 ```
 
-Then reload the window. Fill **Product truth** (what it does today, for whom). Then `/shadowfax`.
+Then reload the window. Empty run-state → `/onboarding`. Filled product truth → `/roadmap` then `/shadowfax`.
 
 If `.shadowfax/run-state.md` already has product truth, say so and stop. Do not reset their bet.
 
 ## Output
 
-Paths created or left alone. One sentence: fill product truth, then run `/shadowfax`.
+Paths created or left alone. One sentence: empty run-state → `/onboarding` or fill product truth, then `/roadmap`, then `/shadowfax`.
 
 ## Done
 

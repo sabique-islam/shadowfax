@@ -1,6 +1,6 @@
 # Run state
 
-Living bet. Update the field a skill is allowed to change. Date every evidence line. Source it.
+Living bet. Update the field a skill is allowed to change. Date every evidence line. Source it. Tag claims `[validated]` or `[assumption]` when a skill asks.
 
 ## Product truth
 
@@ -10,7 +10,13 @@ What it does today, for whom. Not the vision deck.
 
 ## Evidence
 
-Dated, sourced quotes. Complaints, replies, issues, reviews.
+Dated, sourced quotes. Complaints, replies, issues, reviews. Tag `[validated]` when a real user (not a friend) said it; `[assumption]` when it is your read.
+
+-
+
+## Assumptions
+
+Load-bearing guesses still unproven. Route to `talk-to-users` before building on them.
 
 -
 
@@ -25,6 +31,24 @@ One primary. Named people or companies if you have them.
 Lead sentence:
 
 Refuse to say:
+
+## Diagnosis
+
+The single biggest bottleneck between you and the next ten users or first dollar. One sentence.
+
+-
+
+## Roadmap
+
+Now (one move, skill, done looks like):
+
+Next:
+
+Later:
+
+Log (date, move, learned):
+
+-
 
 ## Channel bet
 
@@ -57,3 +81,4 @@ What happened. What that implies.
 Bets that already died. Date, channel, why.
 
 -
+

@@ -7,9 +7,11 @@ disable-model-invocation: true
 
 # ICP
 
-One primary. Named if possible. Secondary only if the founder asks.
+One primary. Named if possible. Secondary only if the founder asks. Sharp "not for" makes yes believable.
 
-You need **Evidence**. If evidence is thin, refuse and point at `market-research` or `find-complaints`.
+Framework: [references/framework.md](references/framework.md).
+
+You need **Evidence**. If evidence is thin, refuse and point at `market-research`, `find-complaints`, or `talk-to-users`.
 
 Write **ICP hypothesis** only.
 

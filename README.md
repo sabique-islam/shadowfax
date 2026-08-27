@@ -10,9 +10,7 @@
 
 ---
 
-Shadowfax is a founder-side GTM plugin. It finds where demand already talks, picks one bet, and drafts the reach. You send and post.
-
-It does not write product code. It does not post.
+Shadowfax is an agent plugin for Cursor, Claude Code, and other coding agents. It keeps a short notes file in your project (what the product does, who you've talked to, what's been tried), researches where people already complain about your problem, and drafts the next step - cold email, launch post, support reply, pricing call prep, SEO fix.
 
 ## Install
 
@@ -22,7 +20,7 @@ One command. Works in Cursor, Claude Code, Codex, and 70+ agents ([skills CLI](h
 npx skills add sabique-islam/shadowfax
 ```
 
-All 26 skills, no prompts, copy files (Cursor skips skill-folder symlinks):
+All 40 skills, no prompts, copy files (Cursor skips skill-folder symlinks):
 
 ```bash
 npx skills add sabique-islam/shadowfax --all --copy -y
@@ -66,15 +64,16 @@ That copies skills into `~/.cursor/skills/` and points `~/.cursor/plugins/local/
 ## Get started
 
 1. `/setup-shadowfax` (creates `.shadowfax/` in the working project if missing).
-2. Fill product truth: what it does today, for whom.
-3. `/shadowfax` with what you know. The router opens exactly one specialist.
-4. You send or post. Then come back with what happened.
+2. `/onboarding` (five questions + repo scan) or fill product truth by hand.
+3. `/roadmap` for diagnosis and the one Now move.
+4. `/shadowfax` with what you need. The router opens exactly one specialist.
+5. You send, post, or take the call. Come back with what happened.
 
 ```
 /shadowfax we have a CSV importer that hangs at 50k rows. indie hackers keep filing the same issue. what is the shortest path to ten users.
 ```
 
-`/write` is the prose gate on anything you might paste.
+`/write` gates outbound paste-ready copy. `/review` gates strategy deliverables.
 
 ## Skills
 
@@ -82,25 +81,39 @@ That copies skills into `~/.cursor/skills/` and points `~/.cursor/plugins/local/
 | --- | --- |
 | `/shadowfax` | Routes to exactly one specialist |
 | `/setup-shadowfax` | Creates cwd `.shadowfax/` if missing |
+| `/onboarding` | Five questions + repo scan → product truth |
+| `/roadmap` | Diagnosis, Now/Next/Later plan |
+| `/review` | Skeptic gate on strategy deliverables |
 | `/write` | Prose gate on outbound drafts |
+| `/talk-to-users` | TAB interviews, validated vs assumption |
 | `/market-research` | Who has the problem, how they solve it now |
 | `/icp` | Who becomes an early user |
-| `/competitive` | Their positioning, pricing, channels, launches |
+| `/competitive` | Rivals' positioning, pricing, channels |
 | `/find-communities` | Discord, Reddit, Slack, forums, HN |
 | `/find-complaints` | Reviews, G2, app stores, support threads |
 | `/prospecting` | Named people, companies, creators |
 | `/github` | Issues, PRs, discussions |
 | `/youtube` | URL to timestamped script plus summary |
 | `/positioning` | What to say and what not to say |
+| `/value-prop` | JTBD, provable value proposition |
+| `/homepage` | Landing page for the developer who visits |
+| `/beyond-wrapper` | AI products vs commodity model |
+| `/pricing` | Value metric, packaging, price |
+| `/buyer-gap` | Developer adopter vs budget holder |
 | `/distribution` | One path this cycle |
 | `/experimentation` | One experiment with a kill |
+| `/activation` | Time-to-first-value, friction log |
+| `/first-users` | First 50 through one channel |
 | `/outreach` | One specific message per prospect |
-| `/content` | Long-form from product, PRs, users; gated new SEO posts |
-| `/content-audit` | Rank existing posts by search opportunity, draft surgical edits |
+| `/launches` | Coordinated launch drafts |
+| `/growth-loops` | Self-reinforcing usage → users |
+| `/content` | Long-form from product, PRs, users |
+| `/content-audit` | Rank existing posts by SEO opportunity |
 | `/posts` | Short social for the chosen network |
 | `/video-ideas` | Reel and short ideas |
 | `/trends` | Live niche jokes and fun-post research |
-| `/launches` | Coordinated drafts for this launch |
+| `/customer-support` | Support ticket and email reply drafts |
+| `/inbound` | Call scripts, voicemail, follow-ups |
 | `/sales` | Discovery, objections, follow-ups |
 | `/analytics` | Acquisition, activation, retention |
 | `/aeo` | Crawl / cite / click for answer engines |
