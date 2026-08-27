@@ -17,6 +17,7 @@ const tests = [
   'skills/aeo/tests/citations.test.js',
   'skills/trends/tests/fetch.test.js',
   'skills/video-ideas/tests/check.test.js',
+  'skills/review/tests/check.test.js',
   'scripts/missing-binaries.test.js',
   'scripts/setup-init.test.js',
 ];

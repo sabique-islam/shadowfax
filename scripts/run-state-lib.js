@@ -3,9 +3,15 @@
 const TEMPLATE_NOISE = [
   /^what it does today/i,
   /^dated, sourced quotes/i,
+  /^load-bearing guesses/i,
   /^one primary/i,
   /^lead sentence:?$/i,
   /^refuse to say:?$/i,
+  /^the single biggest bottleneck/i,
+  /^now \(one move/i,
+  /^next:?$/i,
+  /^later:?$/i,
+  /^log \(date, move/i,
   /^one path this cycle/i,
   /^specific people/i,
   /^what would make this bet true/i,
@@ -21,6 +27,8 @@ const TEMPLATE_NOISE = [
   /^when we abandon/i,
   /^what that implies/i,
   /^date, channel, why/i,
+  /^tag `/i,
+  /^route to `talk-to-users`/i,
 ];
 
 function parseSections(md) {
@@ -61,6 +69,8 @@ function flags(md) {
     evidence: filled(s['Evidence']),
     icp: filled(s['ICP hypothesis']),
     positioning: filled(s['Positioning bet']),
+    diagnosis: filled(s['Diagnosis']),
+    roadmap: filled(s['Roadmap']),
     channel: filled(s['Channel bet']),
     reachList: filled(s['Reach list']),
     lastObservation: filled(s['Last observation']),

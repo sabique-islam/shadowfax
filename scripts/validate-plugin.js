@@ -353,6 +353,7 @@ function main() {
     'skills/shadowfax/scripts/pick.js',
     'skills/trends/scripts/fetch.js',
     'skills/video-ideas/scripts/check.js',
+    'skills/review/scripts/check.js',
     'skills/setup-shadowfax/scripts/init.js',
   ]) {
     if (!existsRel(rel)) fail('bundled script missing: ' + rel);
