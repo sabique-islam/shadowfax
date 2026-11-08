@@ -19,7 +19,7 @@ From repo root: `node scripts/run-state-check.js market-research`. After each qu
 
 1. Restate the product in one line from product truth, not the pitch.
 2. Search for people describing the pain, the workaround, and the substitute (spreadsheet, agency, incumbent, ignoring it).
-3. Capture quotes with source and date. Prefer independent repetition.
+3. Capture quotes with source and publication/checked dates. Prefer independent repetition; deduplicate reposts or summaries of the same origin. Keep solved/tolerated cases and contrary evidence visible. A current capability claim, planned feature, and vendor-reported result need different labels.
 4. Note substitutes and switching cost in one sentence each.
 5. Stop at evidence. Do not recommend Twitter. Do not draft posts.
 

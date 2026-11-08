@@ -25,3 +25,9 @@ No fake personas, coordinated vote/comment manipulation, fake scarcity, or decep
 ## Readout
 
 Give raw counts, eligible denominators, missing data, source/creative versions, audience differences, and whether the observation window finished. Label causal claims separately from descriptions. If a handful of posts does well, repeat with a comparable audience before increasing cost. If qualified visitors fail activation, route the learning to activation rather than generating more content.
+
+## A reusable play is a bounded state transition
+
+When handing a proposed play to another human or tool, specify entry eligibility, the source event and stable ID, one intended action, what counts as completion, and the condition that cancels the next step. A like is not a resource request; a draft is not delivery; a reply on one surface must be visible before proposing another touch. Record what identity matches across tools are actually known.
+
+Keep the current channel bet unless the founder explicitly chooses to expand it. Do not turn missing replies into permission to chase the same person across every network. An exported list is a snapshot; name who refreshes exclusions before use. Replayed events must not create duplicate fulfillment tasks. These are handoff requirements, not a claim that an automation is running.

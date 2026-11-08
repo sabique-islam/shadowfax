@@ -135,6 +135,22 @@ cases.push(
   { flags: { ...empty, productTruth: true }, message: 'handle this prospect reply', skill: 'reply-triage' }
 );
 
+for (const message of ['research social listening for our buyer problem', 'find competitor post engagers', 'who liked our LinkedIn post', 'find buying-intent conversations']) {
+  cases.push({ flags: full(), message, skill: 'social-listening' });
+  cases.push({ flags: empty, message, skill: 'ask' });
+  cases.push({ flags: full({ channel: false, diagnosis: false }), message, skill: 'social-listening' });
+}
+for (const message of ['design a lead magnet', 'a gated guide for prospects', 'test a resource giveaway', 'a comment-to-get resource pilot']) {
+  cases.push({ flags: full(), message, skill: 'lead-magnets' });
+  cases.push({ flags: empty, message, skill: 'ask' });
+  cases.push({ flags: full({ diagnosis: false }), message, skill: 'roadmap' });
+  cases.push({ flags: full({ channel: false }), message, skill: 'distribution' });
+}
+for (const message of ['research social listening', 'design a lead magnet']) {
+  cases.push({ flags: full({ icp: false }), message, skill: 'icp' });
+  cases.push({ flags: full({ icp: false, evidence: false }), message, skill: 'market-research' });
+}
+
 for (const c of cases) {
   const got = pick(c.flags, c.message);
   assert.strictEqual(got.skill, c.skill, JSON.stringify({ want: c.skill, got, message: c.message }));

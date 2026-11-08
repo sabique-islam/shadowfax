@@ -11,7 +11,7 @@ Earn a first useful result, then offer the next job the paid product solves.
 
 Run `node scripts/run-state-check.js free-tools`. Requires Product truth, ICP hypothesis, Diagnosis, and Channel bet. The tool is an acquisition asset inside that channel, not a reason to add more channels.
 
-Read [references/playbook.md](references/playbook.md) for selection, economics, instrumentation, and worked examples.
+Read [references/playbook.md](references/playbook.md) for selection, economics, instrumentation, and worked examples. For a downloadable guide/checklist rather than an interactive utility, recommend `lead-magnets` as the next specialist.
 
 ## Process
 
