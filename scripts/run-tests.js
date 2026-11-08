@@ -11,6 +11,7 @@ const tests = [
   'skills/growth-hacks/tests/select.test.js',
   'scripts/growth-state.test.js',
   'skills/outreach/tests/scan.test.js',
+  'skills/outreach-ops/tests/ledger.test.js',
   'skills/experimentation/tests/check.test.js',
   'skills/analytics/tests/funnel.test.js',
   'skills/content/tests/gate.test.js',

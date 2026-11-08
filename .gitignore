@@ -1,1 +1,4 @@
 .DS_Store
+
+# Local operational contact data and handoffs
+.shadowfax/outreach/

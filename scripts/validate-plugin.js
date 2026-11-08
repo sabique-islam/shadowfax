@@ -344,6 +344,8 @@ function main() {
     'skills/youtube/scripts/transcript.sh',
     'skills/github/scripts/fetch.sh',
     'skills/outreach/scripts/generic-scan.js',
+    'skills/outreach-ops/scripts/ledger.js',
+    'skills/outreach-ops/assets/example-events.json',
     'skills/experimentation/scripts/check.js',
     'skills/analytics/scripts/funnel.js',
     'skills/content/scripts/gate.js',

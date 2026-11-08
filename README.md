@@ -20,7 +20,7 @@ One command. Works in Cursor, Claude Code, Codex, and 70+ agents ([skills CLI](h
 npx skills add sabique-islam/shadowfax
 ```
 
-All 47 skills, no prompts, copy files (Cursor skips skill-folder symlinks):
+All 51 skills, no prompts, copy files (Cursor skips skill-folder symlinks):
 
 ```bash
 npx skills add sabique-islam/shadowfax --all --copy -y
@@ -90,7 +90,13 @@ Try one request after filling your project state:
 
 The router chooses one specialist and checks prerequisites. Brand replies need the actual thread and a suitable voice; the examples are original teaching material, not copied brand posts or claims of virality. Campaigns remain research and drafts: you send, post, and spend.
 
-The [source audit](docs/research/2026-11-08-growth-library-audit.md) records eight public libraries inspected, primary campaign sources, evidence limits, and what was added. Case reports are distinguished from measured results in your product. None of this establishes a promise of traction.
+The [case library](skills/growth-hacks/references/cases.md) records primary campaign sources and their evidence limits. Historical case reports are distinguished from measured results in your product.
+
+## Keep outreach evidence and outcomes together
+
+`/outreach-ops` maintains a local event ledger for sourced accounts, contacts, signals, address-check evidence, draft revisions, reviews, replies, and reported outcomes. It checks freshness and account context, holds replied/suppressed accounts, and exports eligible reviewed drafts for a human handoff. `/reply-triage` handles the supplied conversation, including clear declines, referrals, questions, and unknowns.
+
+The ledger runs locally with no network access or mailbox credentials. Email verification is imported evidence, not a check this tool performs. An exported CSV is not a send or a live suppression sync. See the [workflow](skills/outreach-ops/references/workflow.md) for the event format, review checks, and handoff limits.
 
 ## Skills
 
@@ -109,6 +115,7 @@ The [source audit](docs/research/2026-11-08-growth-library-audit.md) records eig
 | `/find-communities` | Discord, Reddit, Slack, forums, HN |
 | `/find-complaints` | Reviews, G2, app stores, support threads |
 | `/prospecting` | Named people, companies, creators |
+| `/social-listening` | Current buyer conversations with fit, intent, and exclusion evidence |
 | `/github` | Issues, PRs, discussions |
 | `/youtube` | URL to timestamped script plus summary |
 | `/positioning` | What to say and what not to say |
@@ -122,10 +129,13 @@ The [source audit](docs/research/2026-11-08-growth-library-audit.md) records eig
 | `/activation` | Time-to-first-value, friction log |
 | `/first-users` | First 50 through one channel |
 | `/outreach` | One specific message per prospect |
+| `/outreach-ops` | Local prospect history, readiness checks, and reviewed CSV handoff |
+| `/reply-triage` | Supplied prospect replies → disposition and grounded response draft |
 | `/launches` | Coordinated launch drafts |
 | `/growth-loops` | Self-reinforcing usage → users |
 | `/growth-hacks` | Select and adapt a concrete bounded acquisition pilot |
 | `/free-tools` | Useful free tools with a credible paid next step |
+| `/lead-magnets` | Useful downloadable resources with explicit request and fulfillment boundaries |
 | `/referrals` | Customer/affiliate rewards, qualification, and economics |
 | `/partnerships` | Creator, newsletter, integration, and agency pilots |
 | `/waitlist` | Honest access queues and invitation-cohort activation |

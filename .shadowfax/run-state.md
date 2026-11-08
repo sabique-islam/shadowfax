@@ -50,6 +50,10 @@ Log (date, move, learned):
 
 - 2026-11-08 — Skill-library maintenance requested by founder. [validated: repository] Added seven specialist workflows, 22 bounded tactic cards, source audit, and deeper launch/loop/outreach references. [assumption] These improve GTM decisions.
 
+- 2026-11-08 — Outreach workflow maintenance. [validated: repository] Added outreach operations and reply triage, evidence/review checks, persistent account holds, and reported-outcome tracking. [assumption] Founder effectiveness improves; no commercial comparison run.
+
+- 2026-11-08 — Reference cleanup and library maintenance. [validated: repository] Removed peer-product comparison artifacts and references while preserving original improvements; added social-listening and lead-magnet workflows, lookalike qualification, and explicit fulfillment/cancellation boundaries. [assumption] Better commercial outcomes remain unmeasured. Product comparisons stay in the chat.
+
 ## Channel bet
 
 One path this cycle. Why this path. Where the ICP already is.

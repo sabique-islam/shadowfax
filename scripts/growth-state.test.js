@@ -6,7 +6,7 @@ const path = require('path');
 const os = require('os');
 const { spawnSync } = require('child_process');
 const root = path.resolve(__dirname, '..');
-const skills = ['growth-hacks', 'free-tools', 'referrals', 'partnerships', 'waitlist', 'brand-replies', 'lifecycle-email'];
+const skills = ['growth-hacks', 'free-tools', 'referrals', 'partnerships', 'waitlist', 'brand-replies', 'lifecycle-email', 'outreach-ops', 'lead-magnets'];
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'shadowfax-state-'));
 const state = path.join(dir, 'run-state.md');
 const required = ['Product truth', 'ICP hypothesis', 'Diagnosis', 'Channel bet'];
@@ -29,5 +29,12 @@ try {
     assert(fs.existsSync(path.join(root, 'skills', skill, 'SKILL.md')));
   }
   write('Channel bet'); assert.strictEqual(run('lifecycle-email').status, 0);
+  write(); assert.strictEqual(run('reply-triage').status, 0);
+  write('Product truth'); assert.strictEqual(run('reply-triage').status, 1);
+  write(); assert.strictEqual(run('social-listening').status, 0);
+  write('Product truth'); assert.strictEqual(run('social-listening').status, 1);
+  write('ICP hypothesis'); assert.strictEqual(run('social-listening').status, 1);
+  write('Diagnosis'); assert.strictEqual(run('social-listening').status, 0);
+  write('Channel bet'); assert.strictEqual(run('social-listening').status, 0);
 } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 console.log('ok growth skill state prerequisites and standalone CLI failures');

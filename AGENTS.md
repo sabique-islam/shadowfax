@@ -12,6 +12,8 @@ Plugin root is the directory that contains `skills/` (real files) and `scripts/`
 
 When explicitly maintaining the skill library itself, inspect and edit the skill definitions needed for that maintenance request. This is not running several founder campaigns. Log maintenance in **Roadmap** without inventing Product truth, onboarding a fictional business, or treating library research as customer validation. The router/state gates below govern founder GTM execution.
 
+Peer products supplied for library research are reference inputs. Keep product comparisons in the chat unless the founder asks to store them; turn useful findings into original, product-neutral workflows.
+
 ## Protocol (gates)
 
 1. **State before advice.** Read run-state. Empty product truth → `onboarding`. No diagnosis → `roadmap` before tactics.
@@ -27,7 +29,7 @@ Execute them. Do not reimplement them in prose. `run-state-check` and `evidence-
 From the plugin root:
 
 - Router first: `node skills/shadowfax/scripts/pick.js --message '<founder message>'` then `node scripts/run-state-check.js <skill>`
-- Pickable via message (not slash-only): `prospecting`, `experimentation`, `content-audit`, `aeo`, `onboarding`, `roadmap`, `pricing`, `customer-support`, `inbound`, `growth-hacks`, `free-tools`, `referrals`, `partnerships`, `waitlist`, `brand-replies`, `lifecycle-email`
+- Pickable via message (not slash-only): `prospecting`, `experimentation`, `content-audit`, `aeo`, `onboarding`, `roadmap`, `pricing`, `customer-support`, `inbound`, `growth-hacks`, `free-tools`, `referrals`, `partnerships`, `waitlist`, `brand-replies`, `lifecycle-email`, `outreach-ops`, `reply-triage`, `social-listening`, `lead-magnets`
 - Find skills, after each quote: `bash scripts/evidence-log.sh <source> <quote> <url>`
 - Outbound drafts: `node skills/write/scripts/lint.js analyze <file-or-stdin>` then apply `skills/write`
 - Strategy deliverables: `node skills/review/scripts/check.js <file>` then apply `skills/review`
@@ -90,6 +92,7 @@ Open the matching `skills/<name>/SKILL.md`. Bodies stay in those files.
 - `find-communities` — Discord, Reddit, Slack, forums, HN
 - `find-complaints` — reviews, G2, app stores, support threads
 - `prospecting` — named people, companies, creators
+- `social-listening` — current conversations, intent evidence, engagers vs requesters
 - `github` — issues, PRs, discussions
 - `youtube` — URL to timestamped script plus summary
 
@@ -109,10 +112,13 @@ Open the matching `skills/<name>/SKILL.md`. Bodies stay in those files.
 
 - `first-users` — first 50 through one channel, hand-to-hand
 - `outreach` — one specific message per prospect
+- `outreach-ops` — local evidence ledger, readiness checks, reviewed handoff
+- `reply-triage` — supplied prospect replies, disposition, response drafts
 - `launches` — coordinated launch drafts
 - `growth-loops` — self-reinforcing usage → users
 - `growth-hacks` — choose one feasible mechanism from executable tactic cards
 - `free-tools` — manual pilot → free utility → paid next job
+- `lead-magnets` — complete downloadable resource, requested delivery, useful next job
 - `referrals` — customer/affiliate incentives with contribution economics
 - `partnerships` — creator, newsletter, integration, and agency pilots
 - `waitlist` — qualified demand, honest access, invitation-wave activation
