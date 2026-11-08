@@ -1,0 +1,106 @@
+[
+  {
+    "id": "example-account",
+    "type": "account",
+    "at": "2026-11-01T09:00:00Z",
+    "account": {
+      "id": "lantern",
+      "name": "Lantern Demo",
+      "domain": "lantern.test",
+      "source": {
+        "url": "https://lantern.test/careers",
+        "observed_at": "2026-11-01T09:00:00Z"
+      }
+    }
+  },
+  {
+    "id": "example-fit",
+    "type": "qualification",
+    "at": "2026-11-01T09:00:00Z",
+    "account_id": "lantern",
+    "fit": "yes",
+    "reason": "Synthetic example: the role matches the target workflow; budget and intent remain unknown.",
+    "source": {
+      "url": "https://lantern.test/careers",
+      "observed_at": "2026-11-01T09:00:00Z"
+    }
+  },
+  {
+    "id": "example-contact",
+    "type": "contact",
+    "at": "2026-11-01T09:00:00Z",
+    "contact": {
+      "id": "mina",
+      "account_id": "lantern",
+      "name": "Mina Example",
+      "role": "Operations lead",
+      "email": "mina@lantern.test",
+      "source": {
+        "url": "https://lantern.test/careers",
+        "observed_at": "2026-11-01T09:00:00Z"
+      }
+    }
+  },
+  {
+    "id": "example-signal",
+    "type": "signal",
+    "at": "2026-11-01T09:00:00Z",
+    "signal": {
+      "id": "weekly-work",
+      "account_id": "lantern",
+      "kind": "change",
+      "observation": "The fictional role description mentions weekly reconciliation.",
+      "interpretation": "This job may be relevant; no buying intent is established.",
+      "source": {
+        "url": "https://lantern.test/careers",
+        "observed_at": "2026-11-01T09:00:00Z"
+      },
+      "expires_at": "2026-12-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "example-check",
+    "type": "verification",
+    "at": "2026-11-01T09:00:00Z",
+    "contact_id": "mina",
+    "email": "mina@lantern.test",
+    "status": "deliverable",
+    "method": "provider",
+    "reference": "SYNTHETIC DEMO ONLY \u2014 not a real check",
+    "checked_at": "2026-11-01T09:00:00Z",
+    "expires_at": "2026-12-01T00:00:00Z"
+  },
+  {
+    "id": "example-draft",
+    "type": "draft",
+    "at": "2026-11-01T09:00:00Z",
+    "draft": {
+      "id": "mina-first",
+      "contact_id": "mina",
+      "subject": "weekly reconciliation",
+      "body": "The role description mentions weekly reconciliation. Would a sample checklist for that job be useful?",
+      "signal_ids": [
+        "weekly-work"
+      ],
+      "claims": [
+        {
+          "text": "The role description mentions weekly reconciliation.",
+          "signal_id": "weekly-work"
+        }
+      ]
+    }
+  },
+  {
+    "id": "example-review",
+    "type": "review",
+    "at": "2026-11-01T09:00:00Z",
+    "draft_id": "mina-first",
+    "verdict": "pass",
+    "checks": {
+      "facts": true,
+      "voice": true,
+      "offer": true
+    },
+    "note": "Synthetic example only. A real record needs inspected sources and a real address-check report."
+  }
+]

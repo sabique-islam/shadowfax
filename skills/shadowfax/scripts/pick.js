@@ -26,6 +26,8 @@ function intentFromMessage(message) {
   if (/\b(roadmap|what (to|should I) work on next|diagnosis|now next later|gtm plan)\b/i.test(m)) return 'roadmap';
   if (/\b(interview users|talk to users|TAB|customer discovery|user interview)\b/i.test(m)) return 'talk-users';
   if (/\b(review (this|the)|stress.?test|is this (actually )?good|quality gate)\b/i.test(m)) return 'review';
+  if (/\b(outreach (?:pipeline|operations|ops)|prospect ledger|sequencer (?:export|handoff)|pipeline readiness|outreach export|import prospect(?:s| records)?|track prospect(?:s| stages)?)\b/i.test(m)) return 'outreach-ops';
+  if (/\b(prospect repl(?:y|ies)|sales inbox|inbox triage|reply triage|cold[ -]email objection|out[ -]of[ -]office (?:reply|response)|handle (?:this |these |the )?(?:sales |prospect )repl(?:y|ies))\b/i.test(m)) return 'reply-triage';
   // Specific mechanisms must precede generic pricing, competitor, launch, and outreach keywords.
   if (/\b(brand repl(?:y|ies)|funny (?:social )?comments?|witty (?:comments?|replies)|brand banter|moment marketing|(?:zomato|swiggy)[ -]style)\b/i.test(m)) return 'brand-replies';
   if (/\b(free tools?|engineering as marketing|(?:roi|savings) calculator|grader tool|free utilit(?:y|ies))\b/i.test(m)) return 'free-tools';
@@ -104,6 +106,13 @@ function pick(stateFlags, message) {
     return { skill: 'ask', intent };
   }
 
+  if (intent === 'reply-triage') return { skill: 'reply-triage', intent };
+  if (intent === 'outreach-ops') {
+    if (!stateFlags.icp) return { skill: stateFlags.evidence ? 'icp' : 'market-research', intent };
+    if (!stateFlags.diagnosis) return { skill: 'roadmap', intent };
+    if (!stateFlags.channel) return { skill: 'distribution', intent };
+    return { skill: 'outreach-ops', intent };
+  }
   if (['growth-hacks', 'free-tools', 'referrals', 'partnerships', 'waitlist', 'brand-replies', 'lifecycle-email'].includes(intent)) {
     if (!['brand-replies', 'lifecycle-email'].includes(intent) && !stateFlags.icp) return { skill: 'icp', intent };
     if (!stateFlags.diagnosis) return { skill: 'roadmap', intent };

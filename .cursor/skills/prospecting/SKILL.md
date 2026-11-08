@@ -13,6 +13,8 @@ You want **ICP**. If the channel is empty, still list people, but do not invent 
 
 Write **Reach list** (people and companies).
 
+Use [references/signals-and-accounts.md](references/signals-and-accounts.md) for signal limits, disqualifiers, account roles, contact evidence, and freshness. A hiring/funding observation is not proof of budget or buying intent.
+
 ## Process
 
 From repo root: `node scripts/run-state-check.js prospecting`. If it fails, stop.
@@ -26,7 +28,7 @@ From repo root: `node scripts/run-state-check.js prospecting`. If it fails, stop
 
 ## Output
 
-Numbered list. Name or handle, why them (one fact), where they already spoke, suggested surface (email / thread / issue). Unknowns stay unknown.
+Numbered list. Name or handle, why them (one fact), where they already spoke, suggested surface (email / thread / issue). Unknowns stay unknown. Keep observation separate from buying interpretation, record source/date and a recheck window, and name rejected candidates rather than padding the list. If a local operational record is needed, recommend `outreach-ops` as the next skill.
 
 ## Done
 

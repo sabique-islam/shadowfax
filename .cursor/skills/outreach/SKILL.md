@@ -25,12 +25,15 @@ node skills/write/scripts/lint.js analyze draft.md
 
 generic-scan must exit 0. Then apply `skills/write`. If scan fails, rewrite. Do not ship the banned opener.
 
-1. Open with their artifact (issue, review, thread, repo).
+1. Use the relevant artifact (issue, review, thread, repo) and distinguish what it proves from the buying inference. Pick the strongest product-relevant evidence, not a universal hiring/funding hierarchy.
 2. Use their language. Use our lead sentence only if it fits that language.
 3. One ask. Easy to answer.
 4. Use the artifact, switching, and follow-up patterns in the examples reference. Any follow-up adds a real result or useful answer; stop on refusal or the agreed no-response limit.
 5. Match the surface: email is plain text, no markdown. Public thread is short if the room bans promo.
-6. Draft the batch the founder asked for. Do not spray identical copy.
+6. Map material prospect and product claims to exact sources before review. Record freshness and account context; do not infer budget, authority, lost revenue, or urgent need from a job title or a missing widget.
+7. Draft the batch the founder asked for. Do not spray identical copy.
+
+If the founder needs persistent batch tracking, recommend `outreach-ops`; supplied replies belong in `reply-triage`. Do not run another specialist during this drafting turn.
 
 ## Output
 

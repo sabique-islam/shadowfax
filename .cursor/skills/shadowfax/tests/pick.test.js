@@ -119,6 +119,22 @@ for (const [message, skill] of additions) {
 cases.push({ flags: full(), message: 'one social experiment with a sample and kill', skill: 'experimentation' });
 cases.push({ flags: full(), message: 'customer support ticket reply for a failed order', skill: 'customer-support' });
 
+cases.push(
+  { flags: full(), message: 'manage the outreach pipeline', skill: 'outreach-ops' },
+  { flags: full(), message: 'prepare a sequencer export of prospect records', skill: 'outreach-ops' },
+  { flags: full(), message: 'import prospects into the prospect ledger', skill: 'outreach-ops' },
+  { flags: empty, message: 'manage the outreach pipeline', skill: 'ask' },
+  { flags: full({ icp: false }), message: 'outreach pipeline readiness', skill: 'icp' },
+  { flags: full({ icp: false, evidence: false }), message: 'outreach pipeline readiness', skill: 'market-research' },
+  { flags: full({ diagnosis: false }), message: 'outreach pipeline readiness', skill: 'roadmap' },
+  { flags: full({ channel: false }), message: 'outreach pipeline readiness', skill: 'distribution' },
+  { flags: full(), message: 'handle this prospect reply about pricing', skill: 'reply-triage' },
+  { flags: full(), message: 'triage the sales inbox', skill: 'reply-triage' },
+  { flags: full(), message: 'out-of-office response', skill: 'reply-triage' },
+  { flags: empty, message: 'handle this prospect reply', skill: 'ask' },
+  { flags: { ...empty, productTruth: true }, message: 'handle this prospect reply', skill: 'reply-triage' }
+);
+
 for (const c of cases) {
   const got = pick(c.flags, c.message);
   assert.strictEqual(got.skill, c.skill, JSON.stringify({ want: c.skill, got, message: c.message }));

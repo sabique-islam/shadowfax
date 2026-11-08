@@ -18,9 +18,10 @@ From repo root: `node scripts/run-state-check.js campaign-review`.
 ## Do
 
 1. Restate what was sent, to whom, on which channel, over what window.
-2. Results in numbers they gave. Unknown stays unknown.
-3. Split the miss: message, audience, channel, product. Pick the primary. Say if you cannot tell.
-4. Kill or continue against the written kill criteria. If none existed, say the campaign was not an experiment.
+2. Use the local outreach ledger report when present, or results the founder supplied. Separate unique contacted people, confirmed delivery, human replies, qualification, activation, and wins. A question is not qualification; a verification check is not delivery.
+3. Results in numbers they gave. Unknown stays unknown.
+4. Split the miss: message, audience, channel, product. Pick the primary. Say if you cannot tell.
+5. Kill or continue against the written kill criteria. If none existed, say the campaign was not an experiment.
 
 ## Output
 
