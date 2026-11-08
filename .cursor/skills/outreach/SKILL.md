@@ -28,8 +28,9 @@ generic-scan must exit 0. Then apply `skills/write`. If scan fails, rewrite. Do 
 1. Open with their artifact (issue, review, thread, repo).
 2. Use their language. Use our lead sentence only if it fits that language.
 3. One ask. Easy to answer.
-4. Match the surface: email is plain text, no markdown. Public thread is short if the room bans promo.
-5. Draft the batch the founder asked for. Do not spray identical copy.
+4. Use the artifact, switching, and follow-up patterns in the examples reference. Any follow-up adds a real result or useful answer; stop on refusal or the agreed no-response limit.
+5. Match the surface: email is plain text, no markdown. Public thread is short if the room bans promo.
+6. Draft the batch the founder asked for. Do not spray identical copy.
 
 ## Output
 
@@ -42,7 +43,7 @@ For each draft:
 
 ## Done
 
-One message per named prospect. generic-scan exits 0. write applied. Nothing sent.
+One message per named prospect. generic-scan exits 0. write applied. Nothing sent. Record verified prospect facts in **Reach list** or **Evidence**; update **Last observation** only with actual replies reported by the founder.
 
 ## Refuse
 

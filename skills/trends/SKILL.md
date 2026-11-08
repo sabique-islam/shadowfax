@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 # Trends
 
-Live only. The fetch is the source. Memory is not.
+Live source context only. Fetch or inspect the original; memory is not evidence of a current trend.
 
 The joke still has to fit the ICP. You may add a sourced line to **Evidence**. You do not write the final social post unless the founder also asked; prefer handing angles to `posts`.
 
@@ -20,22 +20,22 @@ node scripts/run-state-check.js trends
 node skills/trends/scripts/fetch.js '<query from ICP or problem language>'
 ```
 
-If the script prints `no live hits`, skip the joke. Do not invent one from training data. After each usable quote: `bash scripts/evidence-log.sh <source> '<quote>' '<url>'`.
+For X, Instagram, or other sources the script cannot access, inspect the original post through available search/browser tools or use founder-supplied text with freshness labeled unverified. If no source context can be established, skip a live trend claim. If the script prints `no live hits`, do not claim that proves no trend exists. Do not invent one from training data. After each usable quote: `bash scripts/evidence-log.sh <source> '<quote>' '<url>'`.
 
 ## Do
 
 1. Query with their language, not our category theater.
-2. For each hit you keep: format or joke, URL, date from the fetch, why the ICP would get it, risk (inside joke, already dead, off-brand).
+2. For each hit you keep: format or joke, URL, publication date and retrieval method, why the ICP would get it, risk (inside joke, already dead, off-brand).
 3. Suggest one way it could attach to the product without lying. If it does not attach, say so.
 
 ## Output
 
-Sourced list. Every row came from fetch.js. Dead or off-brand rows marked as such.
+Sourced list. Every row has an original URL, date, retrieval method, and context. Dead or off-brand rows marked as such.
 
 ## Done
 
-Each joke has a source and date from this session's fetch. Memory was not used as a source.
+Each trend has a source and date inspected this session, or is explicitly labeled founder-supplied with freshness unverified. Memory was not used as a source.
 
 ## Refuse
 
-A joke factory from training data. “Relatable founder grind” with no link. Do not force a meme onto a B2B workflow that would look like a brand intern.
+Fabricated trending material. Original lines grounded in sourced context are allowed; no invented source or event. “Relatable founder grind” with no link. Do not force a meme onto a B2B workflow that would look like a brand intern.

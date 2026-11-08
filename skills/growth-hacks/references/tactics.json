@@ -1,0 +1,550 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "notice": "Original planning cards. Cost and time are proposed pilot allowances, not observed benchmarks. Null case means no historical result is claimed.",
+  "tactics": [
+    {
+      "id": "answer-with-a-working-artifact",
+      "channel": "community",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 3,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "Turn an existing problem thread into a useful worked answer that demonstrates the product job.",
+      "requires": [
+        "A live relevant question",
+        "Community allows this contribution",
+        "A reproducible result"
+      ],
+      "artifact": "One minimal example and explanation with affiliation disclosed if relevant",
+      "manual_test": "Help on three relevant threads, each with a different concrete artifact; founder posts only where appropriate.",
+      "signal": "Unique people who use the example and request the next step / people helped",
+      "stop": "Stop after three relevant contributions or seven days if nobody uses the artifact.",
+      "failure": "An irrelevant product link makes the answer promotional.",
+      "case": null
+    },
+    {
+      "id": "office-hours-teardown",
+      "channel": "community",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 5,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "A consenting small group brings actual workflows; the founder diagnoses and teaches one repeatable fix.",
+      "requires": [
+        "Host permission",
+        "Named audience with the same job",
+        "A teachable workflow"
+      ],
+      "artifact": "A short agenda, synthetic demo, and take-home checklist",
+      "manual_test": "Offer one host a five-person teardown; record which fixes participants actually use.",
+      "signal": "Participants who complete the fix or request a qualified trial / attendees",
+      "stop": "Cancel if no relevant participants commit by the agreed date; do not keep promoting empty sessions.",
+      "failure": "Friendly attendance masks lack of a recurring problem.",
+      "case": null
+    },
+    {
+      "id": "template-with-the-next-step",
+      "channel": "community",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 4,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "A reusable job artifact creates value now and exposes the next workflow.",
+      "requires": [
+        "Evidence people already exchange templates",
+        "A useful artifact independent of signup"
+      ],
+      "artifact": "One complete template, example inputs, and optional next step",
+      "manual_test": "Give five target users a working template in the chosen room; ask what they used.",
+      "signal": "Users reusing the template and trying the next job / qualified recipients",
+      "stop": "Revise or stop if five target users cannot name a useful output in seven days.",
+      "failure": "Template collectors never become product users.",
+      "case": null
+    },
+    {
+      "id": "permissioned-community-challenge",
+      "channel": "community",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 25,
+        "days": 7
+      },
+      "mechanism": "A shared small task produces visible progress and peer help.",
+      "requires": [
+        "Moderator agreement",
+        "A genuinely useful challenge",
+        "Capacity to support participants"
+      ],
+      "artifact": "Challenge brief, sample submission, bounded reward if any",
+      "manual_test": "Run one host-approved challenge with five consenting participants; measure completed work.",
+      "signal": "Participants completing the useful task and repeating it / starters",
+      "stop": "Stop if fewer than the agreed minimum start or if host asks; no manufactured participation.",
+      "failure": "Prize interest overwhelms the actual job.",
+      "case": null
+    },
+    {
+      "id": "private-useful-audit",
+      "channel": "email",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 4,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "A specific observable workflow problem earns a useful diagnosis before a sales ask.",
+      "requires": [
+        "Named prospect artifact",
+        "Permission to inspect anything private",
+        "A result the founder can defend"
+      ],
+      "artifact": "One short audit with evidence and one fix",
+      "manual_test": "Prepare five individually researched audits; founder sends only relevant ones.",
+      "signal": "Qualified replies discussing the diagnosed job / delivered relevant audits",
+      "stop": "Stop after five or seven days with no job-specific reply and inspect targeting.",
+      "failure": "Pretend personalization or unsupported security/performance claims.",
+      "case": null
+    },
+    {
+      "id": "switching-concierge",
+      "channel": "email",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "Remove the cost of trying an alternative at an explicitly observed switching moment.",
+      "requires": [
+        "A dated switching signal",
+        "Actual import/export compatibility",
+        "Reversible trial process"
+      ],
+      "artifact": "Migration map, sample conversion, limitations, and rollback outline",
+      "manual_test": "Offer three relevant prospects a synthetic/redacted trial migration before any commitment.",
+      "signal": "Prospects completing a trial migration and first value / eligible offers",
+      "stop": "Stop if the migration cannot preserve the promised fields or nobody accepts the small test.",
+      "failure": "Celebrating competitor failure or claiming compatibility without a test.",
+      "case": null
+    },
+    {
+      "id": "small-result-before-the-call",
+      "channel": "email",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 4,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "Deliver a bounded useful result instead of demanding a meeting before value.",
+      "requires": [
+        "A repeatable small result",
+        "A prospect with this exact task"
+      ],
+      "artifact": "A sample output and an offer to reproduce it on suitable inputs",
+      "manual_test": "Show three named prospects a synthetic example and ask if that output would help.",
+      "signal": "Prospects supplying a relevant input or accepting a pilot / delivered offers",
+      "stop": "Stop if none want the result; do not rephrase into five call requests.",
+      "failure": "Free custom work has no path to recurring paid value.",
+      "case": null
+    },
+    {
+      "id": "permissioned-peer-introduction",
+      "channel": "email",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 2,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "A satisfied user can introduce a peer whose same problem is known.",
+      "requires": [
+        "An actual satisfied user",
+        "No pressure to reveal private contacts"
+      ],
+      "artifact": "Forwardable explanation of one job and an optional introduction ask",
+      "manual_test": "Ask three satisfied users whether one peer would benefit; founder does not import their contacts.",
+      "signal": "Accepted relevant introductions reaching a first conversation / users asked",
+      "stop": "Stop on refusal; revisit the job if no one can name a relevant peer.",
+      "failure": "Mistaking social politeness for recommendation strength.",
+      "case": null
+    },
+    {
+      "id": "contextual-brand-reply",
+      "channel": "social",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 2,
+        "cash": 0,
+        "days": 3
+      },
+      "mechanism": "A specific welcomed reply builds affinity where target users already converse.",
+      "requires": [
+        "Live source context",
+        "Audience and voice fit",
+        "No unresolved support complaint"
+      ],
+      "artifact": "One original reply and a no-reply alternative",
+      "manual_test": "Review five real opportunities, select only welcomed relevant ones, founder posts individually.",
+      "signal": "Relevant conversations and source-mentioned inbound / replies posted",
+      "stop": "Stop after the bounded pilot if only empty engagement appears, or immediately on clear negative feedback.",
+      "failure": "Generic banter gets laughs from nonbuyers.",
+      "case": "swiggy"
+    },
+    {
+      "id": "native-feature-play",
+      "channel": "social",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 50,
+        "days": 7
+      },
+      "mechanism": "Repurpose a platform feature into a small task naturally related to the product job.",
+      "requires": [
+        "Current feature works",
+        "Audience already uses it",
+        "Manual moderation capacity"
+      ],
+      "artifact": "One sample interaction, participation brief, and useful result",
+      "manual_test": "Invite five existing willing audience members to test the interaction before public launch.",
+      "signal": "People completing a useful interaction and taking the relevant next action / participants",
+      "stop": "Stop if the feature fails, moderation exceeds the cap, or interaction has no product bridge.",
+      "failure": "Copying a large branded stunt without its resources.",
+      "case": "swiggy"
+    },
+    {
+      "id": "personal-progress-card",
+      "channel": "product",
+      "stages": [
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 0,
+        "days": 14
+      },
+      "mechanism": "A meaningful private achievement becomes an optional shareable artifact that serves the recipient.",
+      "requires": [
+        "Real repeat usage",
+        "Share-worthy user outcome",
+        "Consent and private-data controls"
+      ],
+      "artifact": "An anonymized example achievement card and recipient landing path",
+      "manual_test": "Show five retained users manual cards; observe whether they choose to share and recipients try the workflow.",
+      "signal": "Recipient first-value completions / unique recipients, plus voluntary shares / eligible users",
+      "stop": "Stop if users find the result private, trivial, or unworthy of sharing.",
+      "failure": "A vanity badge advertises the vendor rather than the user.",
+      "case": "spotify"
+    },
+    {
+      "id": "collaboration-at-value",
+      "channel": "product",
+      "stages": [
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 0,
+        "days": 14
+      },
+      "mechanism": "A real second-person task creates a useful invitation after first value.",
+      "requires": [
+        "A workflow that needs another person",
+        "Retained users",
+        "A recipient can experience value"
+      ],
+      "artifact": "Sender task, recipient preview, and invitation/decline flow",
+      "manual_test": "Manually support five existing teams through the second-person task before building invites.",
+      "signal": "Recipients reaching their first value / unique invited people",
+      "stop": "Stop if collaboration is artificial or invitees cannot act without a long setup.",
+      "failure": "Treating every invite as a newly acquired customer.",
+      "case": null
+    },
+    {
+      "id": "product-native-referral",
+      "channel": "product",
+      "stages": [
+        "retained"
+      ],
+      "planning": {
+        "hours": 5,
+        "cash": 50,
+        "days": 14
+      },
+      "mechanism": "An earned recommendation and relevant reward bring another user to a qualifying value event.",
+      "requires": [
+        "Repeat value evidence",
+        "Reward economics and cap",
+        "Qualifying event and attribution rule"
+      ],
+      "artifact": "Program terms and one value-moment prompt",
+      "manual_test": "Pilot manually with ten eligible users and settle only qualifying rewards.",
+      "signal": "Referred retained/paying users / eligible referrers, with contribution after costs",
+      "stop": "Pause when liability reaches the cap or the cohort fails the predeclared contribution floor.",
+      "failure": "Rewards recruit self-referrals or users who never return.",
+      "case": "dropbox"
+    },
+    {
+      "id": "free-job-preflight",
+      "channel": "search",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 8,
+        "cash": 50,
+        "days": 14
+      },
+      "mechanism": "A free diagnostic answers a searched job and connects its result to the paid next step.",
+      "requires": [
+        "Verified target queries or demand",
+        "A defensible result",
+        "Maintenance owner"
+      ],
+      "artifact": "Manual result specimen, tool brief, and one search-intent page outline",
+      "manual_test": "Produce outputs for five target users before commissioning a tool; research actual query competition.",
+      "signal": "Qualified product activations / unique tool users",
+      "stop": "Stop the build if users want the result but none need the next paid job.",
+      "failure": "Broad free traffic overwhelms costs without buyer relevance.",
+      "case": "hubspot"
+    },
+    {
+      "id": "switching-intent-page",
+      "channel": "search",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 0,
+        "days": 14
+      },
+      "mechanism": "Answer a specific comparison and migration question with an honest tested example.",
+      "requires": [
+        "Current sourced product facts",
+        "Observed switching queries",
+        "Verified migration scope"
+      ],
+      "artifact": "One comparison with limitations, test method, and sample migration",
+      "manual_test": "Use the draft with five relevant switchers before publishing; founder verifies factual claims.",
+      "signal": "Qualified trials completing migration / relevant page visitors",
+      "stop": "Stop expansion if the single page attracts the wrong intent or compatibility is unproven.",
+      "failure": "Fabricated comparison tables and dozens of thin alternatives pages.",
+      "case": null
+    },
+    {
+      "id": "reusable-free-resource",
+      "channel": "search",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 0,
+        "days": 14
+      },
+      "mechanism": "A useful maintained resource earns citations and introduces the paid workflow.",
+      "requires": [
+        "Rights to distribute the resource",
+        "Buyer overlap",
+        "A named first placement within search distribution"
+      ],
+      "artifact": "Small complete dataset/template library and maintenance policy",
+      "manual_test": "Share the smallest useful resource with five target users and one relevant resource curator.",
+      "signal": "Relevant users trying the paid next job / resource users",
+      "stop": "Stop if the audience differs from buyers or maintenance exceeds the cap.",
+      "failure": "The side resource becomes a second business accidentally.",
+      "case": "unsplash"
+    },
+    {
+      "id": "expert-workflow-collaboration",
+      "channel": "partners",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 100,
+        "days": 14
+      },
+      "mechanism": "An expert demonstrates a real job to an overlapping trusted audience.",
+      "requires": [
+        "Named creator with audience evidence",
+        "Deliverable and compensation agreement",
+        "A working sample workflow"
+      ],
+      "artifact": "Joint demonstration brief and specific pitch",
+      "manual_test": "Propose one small episode or teardown with a clear maximum cost and tracked next action.",
+      "signal": "Qualified first-value users and contribution / total collaboration cost",
+      "stop": "Stop if no audience evidence or agreed deliverable is available; do not prepay an unbounded campaign.",
+      "failure": "Large follower count hides poor buying-role fit.",
+      "case": null
+    },
+    {
+      "id": "complementary-template-swap",
+      "channel": "partners",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 5,
+        "cash": 0,
+        "days": 14
+      },
+      "mechanism": "Two adjacent products make a combined workflow easier and distribute it to actual users.",
+      "requires": [
+        "Complementary jobs",
+        "Each side contributes distribution",
+        "Working integration or manual recipe"
+      ],
+      "artifact": "One joint template and owner per side",
+      "manual_test": "Test the recipe with three shared target users before requesting a listing or announcement.",
+      "signal": "Shared-workflow completions / referred qualified users",
+      "stop": "Stop if either side contributes only a logo or the workflow requires unsupported features.",
+      "failure": "A launch announcement substitutes for a functioning recipe.",
+      "case": null
+    },
+    {
+      "id": "specialist-agency-pilot",
+      "channel": "partners",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 0,
+        "days": 14
+      },
+      "mechanism": "A service provider improves a client delivery task using the product.",
+      "requires": [
+        "Agency serves the target buyer",
+        "A bounded client task",
+        "Permission and terms for shared examples"
+      ],
+      "artifact": "Client-safe demo, agency value proposition, and referral terms if needed",
+      "manual_test": "Offer one named specialist a small nonexclusive trial on synthetic inputs.",
+      "signal": "Qualified client pilots completing the task / agency introductions",
+      "stop": "Stop if the agency cannot identify the task or requires unsupportable custom work.",
+      "failure": "Confusing a friendly partnership discussion with distribution.",
+      "case": null
+    },
+    {
+      "id": "capacity-backed-waitlist",
+      "channel": "launch",
+      "stages": [
+        "prelaunch"
+      ],
+      "planning": {
+        "hours": 5,
+        "cash": 25,
+        "days": 7
+      },
+      "mechanism": "An honest access constraint turns interest into qualified invitation cohorts.",
+      "requires": [
+        "Real capacity constraint",
+        "Prototype or explicit planned capability",
+        "Access dates and reward budget if used"
+      ],
+      "artifact": "Waitlist promise, qualification question, confirmation, and first-wave plan",
+      "manual_test": "Recruit ten qualified people through the chosen launch surface and invite only the number support can onboard.",
+      "signal": "Invited people reaching first value / invitations delivered; repeat value later",
+      "stop": "Stop acquisition if promises cannot be honored or invited people fail to reach value.",
+      "failure": "List size gets called PMF.",
+      "case": "harrys"
+    },
+    {
+      "id": "tryable-launch-proof",
+      "channel": "launch",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 6,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "A working artifact gives a relevant launch audience an immediate experience and a reason to discuss.",
+      "requires": [
+        "Working demo",
+        "Actual channel eligibility",
+        "Founder available for replies"
+      ],
+      "artifact": "One primary post, sample demo, and factual objection replies",
+      "manual_test": "Run a private rehearsal with three target users before the founder submits to the chosen channel.",
+      "signal": "Qualified first-value users / launch visitors",
+      "stop": "Delay if the demo fails or only a signup page exists for a try-before-discussion channel.",
+      "failure": "Leaderboard rank replaces customer evidence.",
+      "case": null
+    },
+    {
+      "id": "method-in-public",
+      "channel": "social",
+      "stages": [
+        "early",
+        "retained"
+      ],
+      "planning": {
+        "hours": 4,
+        "cash": 0,
+        "days": 7
+      },
+      "mechanism": "A useful transparent method invites informed discussion from people who do the same work.",
+      "requires": [
+        "Real data or method",
+        "Permission to publish",
+        "Audience overlap"
+      ],
+      "artifact": "One reproducible method, redacted inputs, limitations, and result",
+      "manual_test": "Share a small real method with three relevant peers for accuracy before founder publishes.",
+      "signal": "Job-specific conversations and relevant artifact reuse / observed interactions",
+      "stop": "Stop if publication exposes private data or only spectacle matters.",
+      "failure": "Transparency theater without a decision-useful artifact.",
+      "case": "buffer"
+    }
+  ]
+}

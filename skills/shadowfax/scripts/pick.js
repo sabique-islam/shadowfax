@@ -26,6 +26,14 @@ function intentFromMessage(message) {
   if (/\b(roadmap|what (to|should I) work on next|diagnosis|now next later|gtm plan)\b/i.test(m)) return 'roadmap';
   if (/\b(interview users|talk to users|TAB|customer discovery|user interview)\b/i.test(m)) return 'talk-users';
   if (/\b(review (this|the)|stress.?test|is this (actually )?good|quality gate)\b/i.test(m)) return 'review';
+  // Specific mechanisms must precede generic pricing, competitor, launch, and outreach keywords.
+  if (/\b(brand repl(?:y|ies)|funny (?:social )?comments?|witty (?:comments?|replies)|brand banter|moment marketing|(?:zomato|swiggy)[ -]style)\b/i.test(m)) return 'brand-replies';
+  if (/\b(free tools?|engineering as marketing|(?:roi|savings) calculator|grader tool|free utilit(?:y|ies))\b/i.test(m)) return 'free-tools';
+  if (/\b(referral (?:program|incentives?|rewards?)|refer[ -]a[ -]friend|affiliate(?:s| program| commissions?)?|ambassador program)\b/i.test(m)) return 'referrals';
+  if (/\b(creator (?:partnerships?|outreach)|influencer(?: marketing| partnerships?)?|co[ -]marketing|newsletter (?:swap|sponsor)|channel partners?|integration partners?|sponsorship)\b/i.test(m)) return 'partnerships';
+  if (/\b(waitlist|wait list|early[ -]access queue|prelaunch referrals?|invitation waves?)\b/i.test(m)) return 'waitlist';
+  if (/\b(lifecycle email|welcome (?:email|sequence)|drip campaign|nurture (?:email|sequence)|reactivation (?:email|sequence)|onboarding emails?|trial reminders?)\b/i.test(m)) return 'lifecycle-email';
+  if (/\b(growth hack(?:s|ing)?|clever (?:campaigns?|marketing)|unconventional marketing|guerrilla marketing|growth tricks?)\b/i.test(m)) return 'growth-hacks';
   if (/\b(pricing|what to charge|free tier|value metric|how much (should we|to) charge)\b/i.test(m)) return 'pricing';
   if (/\b(homepage|landing page|hero copy|above the fold)\b/i.test(m)) return 'homepage';
   if (/\b(value prop|jobs to be done|JTBD|why would they care)\b/i.test(m)) return 'value-prop';
@@ -69,7 +77,7 @@ function intentFromMessage(message) {
   if (/\b(named (people|companies)|outreach list|prospect list|who should we (email|message))\b/i.test(m)) {
     return 'prospecting';
   }
-  if (/\b(distribution experiment|gtm test|one experiment with a kill|hypothesis, sample)\b/i.test(m)) {
+  if (/\b(distribution experiment|social experiments?|gtm test|one experiment with a kill|hypothesis, sample)\b/i.test(m)) {
     return 'experiment';
   }
   if (/\b(cold email|outreach|discord intro|draft (an )?email|follow.?up mail)\b/i.test(m)) return 'outreach';
@@ -96,6 +104,12 @@ function pick(stateFlags, message) {
     return { skill: 'ask', intent };
   }
 
+  if (['growth-hacks', 'free-tools', 'referrals', 'partnerships', 'waitlist', 'brand-replies', 'lifecycle-email'].includes(intent)) {
+    if (!['brand-replies', 'lifecycle-email'].includes(intent) && !stateFlags.icp) return { skill: 'icp', intent };
+    if (!stateFlags.diagnosis) return { skill: 'roadmap', intent };
+    if (intent !== 'lifecycle-email' && !stateFlags.channel) return { skill: 'distribution', intent };
+    return { skill: intent, intent };
+  }
   if (intent === 'talk-users') return { skill: 'talk-to-users', intent };
   if (intent === 'pricing') {
     if (!stateFlags.icp) return { skill: 'icp', intent };

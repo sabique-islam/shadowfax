@@ -31,6 +31,8 @@ If `.shadowfax/run-state.md` already has product truth, say so and stop. Do not 
 
 Paths created or left alone. One sentence: empty run-state → `/onboarding` or fill product truth, then `/roadmap`, then `/shadowfax`.
 
+New projects receive the pristine bundled state asset and an empty evidence table. Existing project notes are preserved; repository-maintainer research must never be copied into a founder brief.
+
 ## Done
 
 cwd `.shadowfax/run-state.md` exists. Template noise is still template, or their text was not overwritten.

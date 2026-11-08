@@ -9,6 +9,8 @@ disable-model-invocation: true
 
 One experiment. Sample, signal, timebox, kill.
 
+For comments, native platform challenges, and small social pilots, read [references/social-tests.md](references/social-tests.md).
+
 Align with **Channel bet**. Write **Success / kill**. You may add a line to **Attempt log** if this replaces a dead test.
 
 ## Process

@@ -40,7 +40,7 @@ Rules live in [scripts/rules.json](scripts/rules.json). The score is a signal, n
 
 - Run a banned-word crusade that flattens a founder who says "robust" on purpose.
 - Inject personality, slang, typos, or "soul" the source does not have.
-- Invent a joke, a 2am story, or a trend to sound human. That is fake authenticity.
+- Invent a lived anecdote, source post, quotation, or trending event to sound human. Original humor grounded in supplied or verified context is allowed; preserve the founder’s intentional wit.
 - Claim the draft is undetectable or detector-proof.
 - Turn the draft into a new template of clipped aphorisms.
 

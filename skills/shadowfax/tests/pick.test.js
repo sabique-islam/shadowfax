@@ -90,6 +90,35 @@ const cases = [
   },
 ];
 
+const additions = [
+  ['find a clever campaign and growth hacks', 'growth-hacks'],
+  ['engineering as marketing with a free tool', 'free-tools'],
+  ['a free tool for a competitor workflow', 'free-tools'],
+  ['design a referral program with rewards', 'referrals'],
+  ['an affiliate program for existing customers', 'referrals'],
+  ['creator outreach for a newsletter partnership', 'partnerships'],
+  ['a newsletter sponsorship', 'partnerships'],
+  ['plan a waitlist for our launch', 'waitlist'],
+  ['prelaunch referrals with an early-access queue', 'waitlist'],
+  ['Zomato style funny comments on social media', 'brand-replies'],
+  ['Swiggy-style witty replies', 'brand-replies'],
+  ['a welcome sequence of onboarding emails', 'lifecycle-email'],
+  ['reactivation email drafts', 'lifecycle-email'],
+];
+for (const [message, skill] of additions) {
+  cases.push({ flags: full(), message, skill });
+  cases.push({ flags: empty, message, skill: 'ask' });
+  cases.push({ flags: full({ diagnosis: false }), message, skill: 'roadmap' });
+  if (!['brand-replies', 'lifecycle-email'].includes(skill)) {
+    cases.push({ flags: full({ icp: false }), message, skill: 'icp' });
+  }
+  if (skill !== 'lifecycle-email') {
+    cases.push({ flags: full({ channel: false }), message, skill: 'distribution' });
+  }
+}
+cases.push({ flags: full(), message: 'one social experiment with a sample and kill', skill: 'experimentation' });
+cases.push({ flags: full(), message: 'customer support ticket reply for a failed order', skill: 'customer-support' });
+
 for (const c of cases) {
   const got = pick(c.flags, c.message);
   assert.strictEqual(got.skill, c.skill, JSON.stringify({ want: c.skill, got, message: c.message }));

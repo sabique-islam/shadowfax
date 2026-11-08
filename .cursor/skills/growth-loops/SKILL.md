@@ -1,13 +1,13 @@
 ---
 name: growth-loops
-description: Designs self-reinforcing loops so usage creates the next users without constant founder pushing. Use after the first 50 hand-acquired users when growth stalls the moment outreach stops.
+description: Designs loops where a useful user action creates another acquisition opportunity. Use when retained usage produces shareable work or collaboration and growth stalls when outreach stops.
 license: MIT
 disable-model-invocation: true
 ---
 
 # Growth loops
 
-Hand-made growth graduated. Build engines, not more posts.
+Start with observed repeat value and a useful sender-to-recipient interaction.
 
 Framework: [references/loops.md](references/loops.md).
 
@@ -32,7 +32,7 @@ Requires **ICP hypothesis** and evidence of some retained users (**Last observat
 
 ## Done
 
-One loop chosen with metric. No "post more" as strategy.
+One loop chosen with sender and recipient value, a manual rehearsal, cycle measurement, and a kill. Write **Success / kill**; record observed test results in **Last observation**.
 
 ## Refuse
 

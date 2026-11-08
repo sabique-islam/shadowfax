@@ -4,21 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-function pluginRootFrom(start) {
-  let dir = path.resolve(start);
-  while (true) {
-    if (fs.existsSync(path.join(dir, 'plugin.json')) && fs.existsSync(path.join(dir, 'AGENTS.md'))) {
-      return dir;
-    }
-    const parent = path.dirname(dir);
-    if (parent === dir) throw new Error('shadowfax plugin root not found from ' + start);
-    dir = parent;
-  }
-}
-
-const PLUGIN_ROOT = pluginRootFrom(__dirname);
-const TEMPLATE_STATE = path.join(PLUGIN_ROOT, '.shadowfax', 'run-state.md');
-const TEMPLATE_EVIDENCE = path.join(PLUGIN_ROOT, '.shadowfax', 'evidence.tsv');
+const TEMPLATE_STATE = path.join(__dirname, '..', 'assets', 'run-state.md');
 
 function main() {
   const destDir = path.join(process.cwd(), '.shadowfax');
@@ -37,10 +23,7 @@ function main() {
   }
 
   if (!fs.existsSync(destEvidence)) {
-    const header = fs.existsSync(TEMPLATE_EVIDENCE)
-      ? fs.readFileSync(TEMPLATE_EVIDENCE, 'utf8')
-      : 'ts\tsource\tquote\turl\n';
-    fs.writeFileSync(destEvidence, header);
+    fs.writeFileSync(destEvidence, 'ts\tsource\tquote\turl\n');
     created.push(destEvidence);
   } else {
     kept.push(destEvidence);

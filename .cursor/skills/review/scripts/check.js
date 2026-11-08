@@ -39,7 +39,13 @@ function main() {
     const m = text.match(re);
     if (m) fails.push('product-as-hero: ' + m[0]);
   }
-  if (/\[assumption\]/i.test(text) && /\b(proven|validated|everyone knows|clearly)\b/i.test(text)) {
+  // Check the assumption's own paragraph or list item, not unrelated sourced facts elsewhere.
+  // This remains a heuristic; a passing result does not verify the claim.
+  const assumptionClaims = text.split(/\n\s*\n|\n(?=\s*(?:[-*]\s+|\[(?:assumption|validated)))/i).filter((part) => /\[assumption\]/i.test(part));
+  if (assumptionClaims.some((part) => {
+    const assertion = part.replace(/\b(?:not|never|isn't|aren't)\s+(?:(?:yet|independently)\s+)?(?:proven|validated|clearly)\b/gi, '');
+    return /\b(proven|validated|everyone knows|clearly)\b/i.test(assertion);
+  })) {
     fails.push('assumption smuggled as truth');
   }
   if (text.trim().length < 40) fails.push('too thin to review');

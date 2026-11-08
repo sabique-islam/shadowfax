@@ -39,7 +39,7 @@ Then: what we are *not* doing (the leftover networks).
 
 ## Done
 
-Paste-ready drafts exist only for channels already chosen. write applied.
+Paste-ready drafts exist only for channels already chosen. write applied. Record the launch hypothesis and thresholds in **Success / kill**; put actual dated results in **Last observation** after the founder reports them.
 
 ## Refuse
 

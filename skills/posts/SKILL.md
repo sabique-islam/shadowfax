@@ -26,7 +26,7 @@ Then apply `skills/write`.
 
 ## Do
 
-1. One idea per post. Their language or a sourced trend from `trends` (do not invent the joke here).
+1. One idea per post. Their language or verified source context. Original humor is allowed; never fabricate a trend or anecdote. For reactive comments on someone else’s post, recommend `brand-replies` as the next specialist.
 2. Draft the number the founder asked for, or one. Not thirty.
 3. Native length. No “🧵 Thread:” theater.
 4. If the post needs a link or a screenshot, say so. Do not fake the metric in the screenshot.

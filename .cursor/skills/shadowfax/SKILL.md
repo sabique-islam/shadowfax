@@ -22,11 +22,15 @@ node skills/shadowfax/scripts/pick.js --message '<founder message>'
 4. Substantive strategy deliverables go through `skills/review` before presenting.
 5. Do not run a second specialist unless the founder named it.
 
-If two named intents could apply, trust the script. Finding 15 people who already complained beats writing a post.
+The picker recognizes concrete mechanisms such as free tools, referrals, partnerships, waitlists, brand replies, lifecycle email, and growth hacks. These still require state and a suitable channel. If two named intents could apply, trust the script. Finding 15 people who already complained beats writing a post.
 
 ## Done
 
 One specialist is named with a reason, that SKILL.md is open, and a second specialist has not started. Or `ask` and three questions, nothing else.
+
+## Library maintenance
+
+An explicit request to audit or edit this pack is skill authoring, not a founder campaign. Inspect the required definitions and test their routes; do not ask for a fictional founder brief because the working template is empty. Record maintenance in the Roadmap log.
 
 ## Refuse
 

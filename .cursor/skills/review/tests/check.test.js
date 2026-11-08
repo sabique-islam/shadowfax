@@ -25,7 +25,15 @@ try {
     failed = true;
   }
   assert.ok(failed, 'bad draft should fail');
-  console.log('ok review check');
+  fs.writeFileSync(tmp, '[validated] A named customer returned for three weekly imports.\n\n[assumption] A referral prompt may help reach similar teams.');
+  execFileSync('node', [check, tmp], { stdio: 'pipe' });
+  fs.writeFileSync(tmp, '- [validated] A customer returned for three weekly imports.\n- [assumption] A referral prompt may reach similar teams.');
+  execFileSync('node', [check, tmp], { stdio: 'pipe' });
+  fs.writeFileSync(tmp, '[assumption] The reward is not yet proven to improve referrals; test with an eligible cohort first.');
+  execFileSync('node', [check, tmp], { stdio: 'pipe' });
+  fs.writeFileSync(bad, '[assumption] The referral flow is proven to double retained customer acquisition for this audience.');
+  assert.throws(() => execFileSync('node', [check, bad], { stdio: 'pipe' }));
+  console.log('ok review check, claim-local assumptions, and unsupported certainty');
 } finally {
   fs.unlinkSync(tmp);
   fs.unlinkSync(bad);

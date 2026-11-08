@@ -11,7 +11,7 @@ One path. Justify it. Do not write the assets.
 
 You need **ICP** and some **Reach list** or community evidence. If you cannot say where they already are, refuse and point at `find-communities`.
 
-Write **Channel bet**.
+Write **Channel bet**. Use [references/channel-choice.md](references/channel-choice.md) to compare mechanisms against time, evidence, and resources.
 
 ## Process
 
