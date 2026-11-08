@@ -48,7 +48,7 @@ Later:
 
 Log (date, move, learned):
 
--
+- 2026-11-08 — Skill-library maintenance requested by founder. [validated: repository] Added seven specialist workflows, 22 bounded tactic cards, source audit, and deeper launch/loop/outreach references. [assumption] These improve GTM decisions.
 
 ## Channel bet
 

@@ -8,7 +8,9 @@ Loop: Research → Hypothesis → Reach → Observe → Learn → Adjust → Rep
 
 Read the working project's [`.shadowfax/run-state.md`](.shadowfax/run-state.md) at the start of a turn. Write it when a skill changes a field. If you cannot name the field you will change, stop.
 
-Plugin root is the directory that contains `skills/` (real files) and `scripts/` (this pack). Run-state and evidence live in the **current working project**. `/shadowfax` is the one skill to remember; it opens exactly one specialist. In Cursor, type `/` in Agent chat to invoke a skill by name.
+Plugin root is the directory that contains `skills/` (real files) and `scripts/` (this pack). Run-state and evidence live in the **current working project**. New-project setup uses the pristine `skills/setup-shadowfax/assets/run-state.md` template and a fresh evidence header; never seed a founder project from this repository’s working notes. `/shadowfax` is the one skill to remember; it opens exactly one specialist. In Cursor, type `/` in Agent chat to invoke a skill by name.
+
+When explicitly maintaining the skill library itself, inspect and edit the skill definitions needed for that maintenance request. This is not running several founder campaigns. Log maintenance in **Roadmap** without inventing Product truth, onboarding a fictional business, or treating library research as customer validation. The router/state gates below govern founder GTM execution.
 
 ## Protocol (gates)
 
@@ -25,7 +27,7 @@ Execute them. Do not reimplement them in prose. `run-state-check` and `evidence-
 From the plugin root:
 
 - Router first: `node skills/shadowfax/scripts/pick.js --message '<founder message>'` then `node scripts/run-state-check.js <skill>`
-- Pickable via message (not slash-only): `prospecting`, `experimentation`, `content-audit`, `aeo`, `onboarding`, `roadmap`, `pricing`, `customer-support`, `inbound`
+- Pickable via message (not slash-only): `prospecting`, `experimentation`, `content-audit`, `aeo`, `onboarding`, `roadmap`, `pricing`, `customer-support`, `inbound`, `growth-hacks`, `free-tools`, `referrals`, `partnerships`, `waitlist`, `brand-replies`, `lifecycle-email`
 - Find skills, after each quote: `bash scripts/evidence-log.sh <source> <quote> <url>`
 - Outbound drafts: `node skills/write/scripts/lint.js analyze <file-or-stdin>` then apply `skills/write`
 - Strategy deliverables: `node skills/review/scripts/check.js <file>` then apply `skills/review`
@@ -109,6 +111,13 @@ Open the matching `skills/<name>/SKILL.md`. Bodies stay in those files.
 - `outreach` — one specific message per prospect
 - `launches` — coordinated launch drafts
 - `growth-loops` — self-reinforcing usage → users
+- `growth-hacks` — choose one feasible mechanism from executable tactic cards
+- `free-tools` — manual pilot → free utility → paid next job
+- `referrals` — customer/affiliate incentives with contribution economics
+- `partnerships` — creator, newsletter, integration, and agency pilots
+- `waitlist` — qualified demand, honest access, invitation-wave activation
+- `brand-replies` — sourced witty comments and reactive brand banter
+- `lifecycle-email` — behavior-triggered drafts with suppression and exits
 - `content` — long-form from product, PRs, users
 - `content-audit` — rank existing posts by SEO opportunity
 - `posts` — short social for the chosen network

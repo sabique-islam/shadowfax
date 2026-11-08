@@ -20,7 +20,7 @@ One command. Works in Cursor, Claude Code, Codex, and 70+ agents ([skills CLI](h
 npx skills add sabique-islam/shadowfax
 ```
 
-All 40 skills, no prompts, copy files (Cursor skips skill-folder symlinks):
+All 47 skills, no prompts, copy files (Cursor skips skill-folder symlinks):
 
 ```bash
 npx skills add sabique-islam/shadowfax --all --copy -y
@@ -75,6 +75,23 @@ That copies skills into `~/.cursor/skills/` and points `~/.cursor/plugins/local/
 
 `/write` gates outbound paste-ready copy. `/review` gates strategy deliverables.
 
+## Concrete growth playbooks
+
+Shadowfax now includes free tools as marketing, referral/affiliate economics, creator and newsletter partnerships, qualified waitlists, behavior-triggered email, and context-specific brand replies. The growth-hacks library has 22 original tactic cards with prerequisites, a manual pilot, planning allowances, a business signal, and a stop rule.
+
+Try one request after filling your project state:
+
+```text
+/shadowfax test a free tool for the job our buyers already search for
+/shadowfax find a creator partnership for our existing channel bet
+/shadowfax draft a Zomato-style funny comment for this specific thread
+/shadowfax choose one growth hack within six hours and no cash spend
+```
+
+The router chooses one specialist and checks prerequisites. Brand replies need the actual thread and a suitable voice; the examples are original teaching material, not copied brand posts or claims of virality. Campaigns remain research and drafts: you send, post, and spend.
+
+The [source audit](docs/research/2026-11-08-growth-library-audit.md) records eight public libraries inspected, primary campaign sources, evidence limits, and what was added. Case reports are distinguished from measured results in your product. None of this establishes a promise of traction.
+
 ## Skills
 
 | Skill | What it does |
@@ -107,6 +124,13 @@ That copies skills into `~/.cursor/skills/` and points `~/.cursor/plugins/local/
 | `/outreach` | One specific message per prospect |
 | `/launches` | Coordinated launch drafts |
 | `/growth-loops` | Self-reinforcing usage → users |
+| `/growth-hacks` | Select and adapt a concrete bounded acquisition pilot |
+| `/free-tools` | Useful free tools with a credible paid next step |
+| `/referrals` | Customer/affiliate rewards, qualification, and economics |
+| `/partnerships` | Creator, newsletter, integration, and agency pilots |
+| `/waitlist` | Honest access queues and invitation-cohort activation |
+| `/brand-replies` | Source-specific witty comments, banter, and Hinglish |
+| `/lifecycle-email` | Behavior-triggered email drafts with exits and suppression |
 | `/content` | Long-form from product, PRs, users |
 | `/content-audit` | Rank existing posts by SEO opportunity |
 | `/posts` | Short social for the chosen network |

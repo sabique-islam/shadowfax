@@ -8,6 +8,8 @@ const ROOT = path.resolve(__dirname, '..');
 const tests = [
   'skills/write/tests/lint.test.js',
   'skills/shadowfax/tests/pick.test.js',
+  'skills/growth-hacks/tests/select.test.js',
+  'scripts/growth-state.test.js',
   'skills/outreach/tests/scan.test.js',
   'skills/experimentation/tests/check.test.js',
   'skills/analytics/tests/funnel.test.js',
