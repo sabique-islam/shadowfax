@@ -19,7 +19,7 @@ Read [references/tactics.json](references/tactics.json) through the selector, no
 node skills/growth-hacks/scripts/select.js --context brief.json
 ```
 
-The selector filters feasibility; it does not predict ROI or select a winner. No match means change the scope or choose no tactic, not silently raise the budget. Read [references/cases.md](references/cases.md) only for a relevant precedent.
+The selector filters feasibility; it does not predict ROI or select a winner. No match means change the scope or choose no tactic, not silently raise the budget. Read [references/cases.md](references/cases.md) only for a relevant precedent. For an explicitly requested physical artifact or gift experiment, use [references/physical-outreach.md](references/physical-outreach.md) to scope the manual pilot, fulfillment boundary, and cost.
 
 1. Compare at most three feasible cards against the actual audience and failed attempts. Explain the causal chain from exposure to value to qualified action.
 2. Choose one. Name the specific place/person, what makes this useful to them, and the manual version before engineering or spend.
